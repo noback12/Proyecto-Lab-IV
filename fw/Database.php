@@ -12,8 +12,9 @@ class Database {
 		return self::$instance;
 	}
 
+	//aclaro cual es la base con la que voy a trabajar
 	private function connect() {
-		$this->cn = mysqli_connect("localhost", "root", "", "empresa");
+		$this->cn = mysqli_connect("localhost", "root", "", "complejo_cine");
 	}
 
 	public function query($q) {

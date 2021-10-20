@@ -1,0 +1,9 @@
+h1{
+	font-size: 65px;
+	text-align: center;
+	text-shadow: 0px 0px 10px #6073bf;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
