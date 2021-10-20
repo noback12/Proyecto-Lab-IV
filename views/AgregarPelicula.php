@@ -7,7 +7,7 @@
 class AgregarPelicula extends View
 {
 	
-	public $pelicula
+	public $pelicula;
 
 	
 }
