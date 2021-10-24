@@ -28,6 +28,7 @@
 			<th>Nombre</th>
 			<th>Precio</th>
 			<th>Cantidad de Salas</th>
+			<th>Estreno</th>
 		</tr>
 
 		<?php
@@ -40,6 +41,7 @@
 				<td><?= $p['duracion'] ?></td>
 				<td><?= $p['sinopsis'] ?></td>
 				<td><?= $p['genero'] ?></td>
+				<td><?= $p['estreno'] ?></td>
 			</tr>
 		<?php } ?>
 	</table>

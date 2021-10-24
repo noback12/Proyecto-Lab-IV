@@ -19,8 +19,8 @@
 		  <input type="time" id="duracion2" name="duracion2">
 		 
 
-		<p><label for="sinopsis">sinopsis:<input type="text" name="sinopsis"></p> 
-		<p><label for="genero">genero:
+		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
+		<p><label for="genero">genero:</label>
 			<select>
 				<option value="1">
 					accion
@@ -35,10 +35,13 @@
 					comedia
 				</option>
 			</select>
+		</p><label for="estreno">Estreno:</label><input type="date" id="esterno" name="estreno"
+	    	value="<?php echo date('Y-m-d'); ?>" 
+	    	min="2000-01-01" />
+
+		<p>
+		<input type="submit" value="Agregar Pelicula" />
 		</p>
-		
-		<input type="submit" value="enviar pago" />
-	
 	</form>
 </body>
 </html>
