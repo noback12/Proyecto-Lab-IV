@@ -10,7 +10,7 @@ require '../views/AgregarPelicula.php';
 require '../views/AgregarPeliculaOk.php';
 
 $mPeli = new Peliculas();
-
+ echo "entre";
 //if(count($_POST)>0){
 if(isset($_POST['nombre'])){
 

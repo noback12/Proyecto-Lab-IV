@@ -13,10 +13,10 @@
 	<form action="" method="post">
 
 		<p><label for="nombre">nombre:</label><input type="text" name="nombre"></p>
-		<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>
+		<!--<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>-->
 
-		  <label for="duracion2">Duracion:</label>
-		  <input type="time" id="duracion2" name="duracion2">
+		  <label for="duracion">Duracion:</label>
+		  <input type="time" id="duracion" name="duracion">
 		 
 
 		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
