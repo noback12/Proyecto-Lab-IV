@@ -6,10 +6,10 @@
 class NuevaPelicula extends Model
 {
 	
-	public function AgregarPeli($id_pelicula,$nombre,$duracion,$sinopsis,$genero,$estreno){
+	public function AgregarPeli($nombre,$duracion,$sinopsis,$genero,$estreno){
 
 		$peliAux = new Peliculas();
-		if(!$peliAux->existePelicula($id_pelicula))die("error peliculaexiste 1");
+		//if(!$peliAux->existePelicula($id_pelicula))die("error peliculaexiste 1");
 
 		//if(!is_numeric($duracion)) die ("error duracion no numerica");
 		/* esto tengo que ir buscar la validacion para fechas 
@@ -33,7 +33,7 @@ class NuevaPelicula extends Model
 
 
 		$this->db->query("INSERT INTO peliculas (nombre ,duracion,sinopsis,genero,estreno) 
-			values ($id_pelicula,$nombre,$duracion,$sinopsis,$genero,$estreno)	");
+			values ('$nombre','$duracion','$sinopsis','$genero','$estreno')	");
 	}
 }
 

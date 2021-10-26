@@ -15,13 +15,12 @@
 		<p><label for="nombre">nombre:</label><input type="text" name="nombre"></p>
 		<!--<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>-->
 
-		  <label for="duracion">Duracion:</label>
-		  <input type="time" id="duracion" name="duracion">
+		<p><label for="duracion">Duracion:</label><input type="time" value="00:01" name="duracion"></p>
 		 
 
 		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
 		<p><label for="genero">genero:</label>
-			<select>
+			<select name="genero">
 				<option value="1">
 					accion
 				</option>
@@ -33,6 +32,18 @@
 				</option>
 				<option value="4">
 					comedia
+				</option>
+				<option value="belica">
+					Belica
+				</option>
+				<option value="musical">
+					Musical
+				</option>
+				<option value="drama">
+					Drama				
+				</option>
+				<option value="documental">
+					Documental
 				</option>
 			</select>
 		</p><label for="estreno">Estreno:</label><input type="date" id="esterno" name="estreno"

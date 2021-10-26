@@ -18,9 +18,28 @@ if(isset($_POST['nombre'])){
 
 	//Es de prueba , agregar al modelo pelicula
 	$mNuevaPelicula = new NuevaPelicula();
-	$mNuevaPelicula->AgregarPeli();
 
-	$v = new AgregarPeliculaOK();
+	?><table>
+<?php 
+
+
+    foreach ($_POST as $key => $value) {
+        echo "<tr>";
+        echo "<td>";
+        echo $key;
+        echo "</td>";
+        echo "<td>";
+        echo $value;
+        echo "</td>";
+        echo "</tr>";
+    }
+
+
+?>
+</table><?php 
+	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno']);
+
+	$vPeli = new AgregarPeliculaOK();
 }else{
 	$vPeli = new AgregarPelicula();
 	$vPeli->Peliculas = $mPeli->getTodos();

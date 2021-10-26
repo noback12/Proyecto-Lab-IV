@@ -1,7 +1,7 @@
 <?php 
 
 
-// controllers / AgregarPelicula.php 
+// controllers / NuevaPelicula.php 
 
 require '../fw/fw.php';
 require '../models/Peliculas.php';
@@ -25,7 +25,7 @@ if(isset($_POST['nombre'])){
 	if(!isset($_POST['estreno']))die("estreno error 1 ");
 
 
-	$mNuevaPelicula->AgregarPeli($_POST['id_pelicula'],$_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno']);
+	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno']);
 
 	$v = new AgregarPeliculaOK();
 }else{
