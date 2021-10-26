@@ -13,6 +13,7 @@
 	<form action="" method="post">
 
 		<p><label for="nombre">nombre:</label><input type="text" name="nombre"></p>
+<<<<<<< Updated upstream
 		<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>
 
 		  <label for="duracion2">Duracion:</label>
@@ -24,15 +25,39 @@
 			<select>
 				<option value="1">
 					accion
+=======
+
+		  <label for="duracion">Duracion:</label>
+		  <input type="time" value="00:01" id="duracion" name="duracion">
+		 
+
+		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
+		<p><label for="genero">genero:</label>
+			<select name="genero">
+				<option value="accion">
+					Accion
+>>>>>>> Stashed changes
 				</option>
-				<option value="2">
-					ciencia ficcion
+				<option value="ciencia ficcion">
+					Ciencia Ficcion
 				</option>
-				<option value="3">
-					terror
+				<option value="terror">
+					Terror
 				</option>
-				<option value="4">
-					comedia
+				<option value="comedia">
+					Comedia
+				</option>
+				<option value="belica">
+					Belica
+				</option>
+				<option value="musical">
+					Musical
+				</option>
+				<option value="drama">
+					Drama				
+				</option>
+				<option value="documental">
+					Documental
 				</option>
 			</select>
 		</p>
