@@ -21,17 +21,17 @@
 		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
 		<p><label for="genero">genero:</label>
 			<select name="genero">
-				<option value="1">
-					accion
+				<option value="accion">
+					Accion
 				</option>
-				<option value="2">
-					ciencia ficcion
+				<option value="ciencia ficcion">
+					Ciencia Ficcion
 				</option>
-				<option value="3">
-					terror
+				<option value="terror">
+					Terror
 				</option>
-				<option value="4">
-					comedia
+				<option value="comedia">
+					Comedia
 				</option>
 				<option value="belica">
 					Belica
@@ -45,10 +45,13 @@
 				<option value="documental">
 					Documental
 				</option>
+				<option value="fantasia">
+					Fantasia
+				</option>
 			</select>
 		</p><label for="estreno">Estreno:</label><input type="date" id="esterno" name="estreno"
 	    	value="<?php echo date('Y-m-d'); ?>" 
-	    	min="2000-01-01" />
+	    	  min="1895-03-22"/>
 
 		<p>
 		<input type="submit" value="Agregar Pelicula" />
