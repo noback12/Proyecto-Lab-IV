@@ -41,7 +41,6 @@
 		</tr>
 
 		<?php
-		//"this->complejos es el $complejos del view que se copia y pega en render
 		 foreach ($this->Peliculas as $p ) {  ?>
 		 
 			<tr>

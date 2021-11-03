@@ -10,6 +10,14 @@ class Peliculas extends Model {
 		return $this->db->fetchAll();
 	}
 
+	public function getPelicula($id_peli){
+		$this->db->query("SELECT * 
+							FROM peliculas
+							WHERE id_pelicula = $id_peli");
+		//Fetch all devuelve un array , fetch solo una fila
+		return $this->db->fetch();
+	}
+
 	
 
 	public function existePelicula($pId){

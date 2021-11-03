@@ -7,9 +7,12 @@ require '../fw/fw.php';
 require '../models/Salas.php';
 require '../models/peliculas.php';
 require '../models/Complejos.php';
+require '../models/Funciones.php';
 require '../views/ListadoSalas.php';
 require '../views/ElegirComplejo.php';
-require '../views/ListadoPeliculas.php';
+require '../views/ListaFunciones.php';
+
+//require '../views/ListadoPeliculas.php';
 
 	//Si tengo seteado el id complejo muestro 
 	if(isset($_POST['id_complejo'])){
@@ -21,7 +24,38 @@ require '../views/ListadoPeliculas.php';
 		$view->Salas = $Salas;
 
 		//Busco las funciones que usan esas salas 
+		$model = new Funciones();
+		$Funciones ;
+		$Peliculas = new Peliculas() ;
 
+		$view= new ListaPeliculaComplejo();
+		
+
+		//Por cada ID sala que haya en un complejo ,busco funciones que coincidan
+		foreach ($Salas as $S ) {
+			//Funciones por cada id_de sala 
+			$Funciones = $model->getFuncionesSala($S['id_sala']);
+			foreach ($Funciones as $F ) {
+				//Obtengo la pelicula para mostrar el nombre
+				$Pelicula = $Peliculas->getPelicula($F['id_pelicula']);
+				// Esto lo tendria que pasar a una vista 
+
+				if($Peliculas->existePelicula($F['id_pelicula'])){
+				echo "<BR>". $F['id_funcion'] ." Pelicula  " . $Pelicula['nombre']  . "<BR>";
+				}else{
+					 echo "Sala ".$S['numero'] ." sin pelicula a las " . $F['hora'] ;
+				}
+			}
+		}		
+		$view->Funciones ;
+
+
+
+		//Busco las funciones que usan esas salas 
+		/*	
+		$model = new 
+
+			*/
 		//Muestro que peliculas dan en esas funciones
 
 		/*$model = new Peliculas();
