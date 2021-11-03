@@ -26,7 +26,7 @@
 				<td><?= $c['id_complejo'] ?></td>
 				<td><?= $c['direccion'] ?></td>
 				<td><?= $c['nombre'] ?></td>
-				<td><?= $c['precio'] ?></td>
+				<td>$<?= $c['precio'] ?></td>
 				<td><?= $c['cant_salas'] ?></td>
 			</tr>
 		<?php } ?>

@@ -10,6 +10,8 @@ class Peliculas extends Model {
 		return $this->db->fetchAll();
 	}
 
+	
+
 	public function existePelicula($pId){
 		//si no existe
 		if(!ctype_digit($pId)) return false ;

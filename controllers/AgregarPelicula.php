@@ -22,7 +22,6 @@ if(isset($_POST['nombre'])){
 	?><table>
 <?php 
 
-
     foreach ($_POST as $key => $value) {
         echo "<tr>";
         echo "<td>";
@@ -33,7 +32,6 @@ if(isset($_POST['nombre'])){
         echo "</td>";
         echo "</tr>";
     }
-
 
 ?>
 </table><?php 

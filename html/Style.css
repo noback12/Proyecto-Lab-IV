@@ -1,3 +1,9 @@
+body{ 
+
+	background-color: #ededed;
+}
+
+
 h1{
 	font-size: 65px;
 	text-align: center;
@@ -7,3 +13,11 @@ h1{
 table, th, td {
   border: 1px solid black;
 }
+
+select , table, th, td{
+	margin-top: 10px;
+	font-size: 30px;
+	align-self: center;
+	width: 100%;
+}
+

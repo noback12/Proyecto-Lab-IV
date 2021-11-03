@@ -2,6 +2,8 @@
 
 // fw/View.php
 
+
+
 //Abastract para que no sea instanciado nunca por si solo 
 abstract class View {
 

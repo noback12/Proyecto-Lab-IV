@@ -4,8 +4,17 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<!-- no funciona <link href="Style.css" rel="stylesheet" type="text/css" />-->
 	<style>
+ 		 <?php include "style.css" ?>
+	</style>
+	<!-- No me funcionaba
+		<link href="Style.css" rel="stylesheet" type="text/css" />-->
+
+	<!--<style>
+		body{ 
+			background-color: #bfbfbf;
+			}
+
 		h1{
 		font-size: 65px;
 		text-align: center;
@@ -14,7 +23,7 @@
 
 		table, th, td {
 		  border: 1px solid black;
-		}
+		}-->
 	</style>
 	<title>Listado Peliculas</title>
 </head>
@@ -23,11 +32,11 @@
 
 	<table>
 		<tr>
-			<th>ID</th>
-			<th>Direccion</th>
+			
 			<th>Nombre</th>
-			<th>Precio</th>
-			<th>Cantidad de Salas</th>
+			<th>Duracion</th>
+			<th>Sinopsis</th>
+			<th>Genero</th>
 			<th>Estreno</th>
 		</tr>
 
@@ -36,7 +45,7 @@
 		 foreach ($this->Peliculas as $p ) {  ?>
 		 
 			<tr>
-				<td><?= $p['id_pelicula'] ?></td>
+				
 				<td><?= $p['nombre'] ?></td>
 				<td><?= $p['duracion'] ?></td>
 				<td><?= $p['sinopsis'] ?></td>
