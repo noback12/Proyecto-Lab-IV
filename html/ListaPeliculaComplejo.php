@@ -12,6 +12,11 @@
 <body>
 	<h1>Listado de Peliculas en complejo X</h1>
 
+		<?php
+		 ?>
+	
+	
+
 
 
 

@@ -5,7 +5,6 @@
 
 require '../fw/fw.php';
 require '../models/Peliculas.php';
-require '../models/NuevaPelicula.php';
 require '../views/AgregarPelicula.php';
 require '../views/AgregarPeliculaOk.php';
 
@@ -17,7 +16,7 @@ $mPeli = new Peliculas();
 if(isset($_POST['nombre'])){
 
 	//Es de prueba , agregar al modelo pelicula
-	$mNuevaPelicula = new NuevaPelicula();
+	$mNuevaPelicula = new Peliculas();
 
 	?><table>
 <?php 
