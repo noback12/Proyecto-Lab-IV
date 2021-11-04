@@ -4,7 +4,7 @@
 
 	class ListaPeliculaComplejo extends View
 	{
-		public $Peliculas; 
+		public $complejos; 
 	}
 
 ?> 

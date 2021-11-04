@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2021 a las 17:39:13
+-- Tiempo de generación: 03-11-2021 a las 07:07:09
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -90,9 +90,9 @@ CREATE TABLE `complejos` (
 --
 
 INSERT INTO `complejos` (`id_complejo`, `direccion`, `nombre`, `precio`, `cant_salas`) VALUES
-(1, 'Rue de Rivoli, 75001', 'Colosseum', 700, 30),
-(2, 'Balcarce 50, C1064', 'Royal Theatre', 650, 25),
-(4, '191 portobello, Notting Hill', 'Electric Cinema', 695, 27);
+(1, 'Rue de Rivoli, 75001', 'Colosseum', 700, 10),
+(2, 'Balcarce 50, C1064', 'Royal Theatre', 650, 8),
+(4, '191 portobello, Notting Hill', 'Electric Cinema', 695, 7);
 
 -- --------------------------------------------------------
 
@@ -128,20 +128,26 @@ CREATE TABLE `funcion` (
   `id_funcion` int(11) NOT NULL,
   `dia` date NOT NULL,
   `hora` time NOT NULL,
-  `id_sala` int(11) NOT NULL
+  `id_sala` int(11) NOT NULL,
+  `id_pelicula` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `funcion`
 --
 
-INSERT INTO `funcion` (`id_funcion`, `dia`, `hora`, `id_sala`) VALUES
-(1, '2021-10-26', '22:10:00', 1),
-(2, '2021-10-26', '19:30:00', 8),
-(3, '2021-10-29', '12:30:00', 9),
-(4, '2021-10-29', '15:20:00', 9),
-(5, '2021-10-29', '17:40:00', 9),
-(6, '2021-10-29', '21:00:00', 9);
+INSERT INTO `funcion` (`id_funcion`, `dia`, `hora`, `id_sala`, `id_pelicula`) VALUES
+(1, '2021-10-26', '22:10:00', 1, 31),
+(2, '2021-10-26', '19:30:00', 8, 0),
+(3, '2021-10-29', '12:30:00', 9, 0),
+(4, '2021-10-29', '15:20:00', 9, 0),
+(5, '2021-10-29', '17:40:00', 9, 0),
+(6, '2021-10-29', '21:00:00', 9, 0),
+(7, '2021-11-10', '18:20:00', 7, 26),
+(8, '2021-11-17', '21:30:00', 7, 26),
+(9, '2021-11-18', '18:20:00', 7, 26),
+(10, '2021-11-18', '21:30:00', 7, 26),
+(11, '2021-11-30', '22:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +172,9 @@ INSERT INTO `peliculas` (`id_pelicula`, `nombre`, `duracion`, `sinopsis`, `gener
 (1, 'The Dark Knight', '02:32:00', 'Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.', 'Accion', '2008-07-17'),
 (2, 'El origen', '02:28:00', 'Dom Cobb es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarles los secretos de sus subconscientes. Su habilidad lo ha vuelto muy popular en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama. Cobb obtiene la oportunidad de redimirse ', 'Ciencia ficcion', '2010-07-26'),
 (26, 'Dunquerke', '01:46:00', 'En mayo de 1940, durante la Segunda Guerra Mundial, Alemania avanza hacia Francia, atrapando a las tropas aliadas en las playas de Dunkerque. Bajo protección aérea y terrestre de las fuerzas británicas y francesas, las tropas son evacuadas lenta y metódicamente de la playa utilizando cualquier embar', 'belica', '2017-07-19'),
-(31, 'Halloween Kills', '01:45:00', 'La saga de Michael Myers y Laurie Strode continúa en el próximo capítulo emocionante de la serie de Halloween', 'terror', '2021-10-14');
+(31, 'Halloween Kills', '01:45:00', 'La saga de Michael Myers y Laurie Strode continúa en el próximo capítulo emocionante de la serie de Halloween', 'terror', '2021-10-14'),
+(33, 'Rush', '02:03:00', 'El carismático inglés James Hunt y el austriaco perfeccionista Niki Lauda destacan en la escena de la Fórmula 1 de los años setenta y comparten una intensa rivalidad dentro y fuera de las pistas', 'drama', '2013-10-31'),
+(34, 'John Wick', '01:41:00', 'Una exploración de las aventuras, las desgarradoras experiencias y las hazañas del legendario asesino a sueldo, John Wick', 'accion', '2015-01-08');
 
 -- --------------------------------------------------------
 
@@ -178,25 +186,24 @@ CREATE TABLE `salas` (
   `id_sala` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
   `capacidad` int(11) NOT NULL,
-  `id_complejo` int(11) NOT NULL,
-  `id_pelicula` int(11) NOT NULL
+  `id_complejo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `salas`
 --
 
-INSERT INTO `salas` (`id_sala`, `numero`, `capacidad`, `id_complejo`, `id_pelicula`) VALUES
-(1, 1, 20, 1, 1),
-(2, 1, 20, 2, 0),
-(3, 1, 10, 4, 0),
-(4, 2, 15, 4, 0),
-(5, 3, 18, 4, 0),
-(6, 4, 22, 4, 0),
-(7, 2, 24, 1, 0),
-(8, 3, 18, 1, 0),
-(9, 2, 10, 2, 0),
-(10, 3, 20, 2, 0);
+INSERT INTO `salas` (`id_sala`, `numero`, `capacidad`, `id_complejo`) VALUES
+(1, 1, 20, 1),
+(2, 1, 20, 2),
+(3, 1, 10, 4),
+(4, 2, 15, 4),
+(5, 3, 18, 4),
+(6, 4, 22, 4),
+(7, 2, 24, 1),
+(8, 3, 18, 1),
+(9, 2, 10, 2),
+(10, 3, 20, 2);
 
 -- --------------------------------------------------------
 
@@ -305,13 +312,13 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `funcion`
 --
 ALTER TABLE `funcion`
-  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `salas`

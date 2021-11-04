@@ -35,6 +35,17 @@ class Complejos extends Model
 		return true ; 
 	}
 
+	//Para mostrar las peliculas de un complejo
+	public function getPeliculas($id_comp){
+		$this->db->query("SELECT * 
+							FROM Peliculas AS P 
+							INNER JOIN Funcion AS F ON P.id_pelicula = F.id_pelicula 
+							INNER JOIN Salas AS S ON S.id_sala = F.id_Sala AND S.id_complejo = $id_comp
+					  ");
+		return $this->db->fetchAll();
+
+
+	}
 
 
 }
