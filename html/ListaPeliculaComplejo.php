@@ -16,10 +16,7 @@
 		<tr>
 			
 			<th>Nombre</th>
-			<th>Duracion</th>
-			<th>Sinopsis</th>
-			<th>Genero</th>
-			<th>Estreno</th>
+			
 		</tr>
 
 		
@@ -30,10 +27,7 @@
 			<tr>
 				
 				<td><?= $p['nombre'] ?></td>
-				<td><?= $p['duracion'] ?></td>
-				<td><?= $p['sinopsis'] ?></td>
-				<td><?= $p['genero'] ?></td>
-				<td><?= $p['estreno'] ?></td>
+				
 			</tr>
 		<?php } ?>
 	</table>

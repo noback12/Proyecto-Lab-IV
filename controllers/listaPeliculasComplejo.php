@@ -4,15 +4,9 @@
 //Muestro las salas de un complejo
 
 require '../fw/fw.php';
-require '../models/Salas.php';
-require '../models/peliculas.php';
 require '../models/Complejos.php';
-require '../models/Funciones.php';
-require '../views/ListadoSalas.php';
 require '../views/ElegirComplejo.php';
-require '../views/ListaFunciones.php';
-
-//require '../views/ListadoPeliculas.php';
+require '../views/ListaPeliculaComplejo.php';
 
 	//Si tengo seteado el id complejo muestro 
 	if(isset($_POST['id_complejo'])){
