@@ -11,15 +11,13 @@ class Peliculas extends Model {
 	}
 
 	public function getPelicula($id_peli){
+		//Validar
 		$this->db->query("SELECT * 
 							FROM peliculas
 							WHERE id_pelicula = $id_peli");
 		//Fetch all devuelve un array , fetch solo una fila
 		return $this->db->fetch();
 	}
-
-
-	
 
 	public function existePelicula($pId){
 		//si no existe
@@ -37,8 +35,6 @@ class Peliculas extends Model {
 
 	public function AgregarPeli($nombre,$duracion,$sinopsis,$genero,$estreno){
 
-
-
 		$peliAux = new Peliculas();
 		
 		//if(!$peliAux->existePelicula($id_pelicula))die("error peliculaexiste 1");
@@ -51,6 +47,7 @@ class Peliculas extends Model {
 		//Validacion Duracion
 		$horas = substr($duracion , 0 ,2 ); 
 		$minutos= substr($duracion,3,5);
+		//ctdigit
 		if(!is_numeric($horas) or !is_numeric($minutos)) die ("error duracion no numerica");
 		if($horas < 0 or $minutos < 0) die("error duracion negativa");
 
@@ -71,8 +68,6 @@ class Peliculas extends Model {
 		}
 
 		
-
-
 		$this->db->query("INSERT INTO peliculas (nombre ,duracion,sinopsis,genero,estreno) 
 			values ('$nombre','$duracion','$sinopsis','$genero','$estreno')	");
 	}

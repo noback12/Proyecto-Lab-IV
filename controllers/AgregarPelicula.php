@@ -8,8 +8,6 @@ require '../models/Peliculas.php';
 require '../views/AgregarPelicula.php';
 require '../views/AgregarPeliculaOk.php';
 
-
-
 $mPeli = new Peliculas();
 
 //if(count($_POST)>0){
