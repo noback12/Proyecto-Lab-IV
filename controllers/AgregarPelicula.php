@@ -32,7 +32,7 @@ if(isset($_POST['nombre'])){
 
 ?>
 </table><?php 
-	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno']);
+	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno'],$_POST['imagen']);
 
 	$vPeli = new AgregarPeliculaOK();
 }else{

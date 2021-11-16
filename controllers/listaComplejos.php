@@ -7,14 +7,8 @@
 	require '../models/Complejos.php';
 	require '../views/ListadoComplejos.php';
 
-
-
 	$comp = new Complejos();
 	$todos = $comp->getTodos(); 
-
-	/*var_dump($todos);
-		para chequear que este todo
-	*/
 
 	$vcomp = new ListadoComplejos();
 	$vcomp->complejos = $todos ;

@@ -10,7 +10,7 @@
 <body>
 	<h1>Agregar pelicula</h1>
 	
-	<form action="" method="post">
+	<form action="" method="post" enctype="multipart/form-data">
 
 		<p><label for="nombre">nombre:</label><input type="text" name="nombre"></p>
 		<!--<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>-->
@@ -52,8 +52,10 @@
 		</p><label for="estreno">Estreno:</label><input type="date" id="esterno" name="estreno"
 	    	value="<?php echo date('Y-m-d'); ?>" 
 	    	  min="1895-03-22"/>
-
 		<p>
+		<p>
+			<label for="imagen">Imagen:</label><input type="file" id="imagen" name="imagen">
+		</p>
 		<input type="submit" value="Agregar Pelicula" />
 		</p>
 	</form>

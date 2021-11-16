@@ -31,4 +31,13 @@ class Salas extends Model {
 		return true ; 
 	}
 
+	public function asientoFuncion($funcion){
+		$this->db->query("SELECT *
+							 FROM asiento_funcion as af
+							 LEFT JOIN  asientos as a 
+							 ON af.id_asiento = a.id_asiento
+							 WHERE af.id_funcion =$funcion");
+		return $this->db->fetchAll();
+	}
+
 }

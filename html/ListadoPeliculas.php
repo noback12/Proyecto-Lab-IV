@@ -7,24 +7,6 @@
 	<style>
  		 <?php include "style.css" ?>
 	</style>
-	<!-- No me funcionaba
-		<link href="Style.css" rel="stylesheet" type="text/css" />-->
-
-	<!--<style>
-		body{ 
-			background-color: #bfbfbf;
-			}
-
-		h1{
-		font-size: 65px;
-		text-align: center;
-		text-shadow: 0px 0px 10px #6073bf;
-		}
-
-		table, th, td {
-		  border: 1px solid black;
-		}-->
-	</style>
 	<title>Listado Peliculas</title>
 </head>
 <body>
@@ -35,9 +17,10 @@
 			
 			<th>Nombre</th>
 			<th>Duracion</th>
-			<th>Sinopsis</th>
+			<th class="sinopsis">Sinopsis</th>
 			<th>Genero</th>
 			<th>Estreno</th>
+			<th>imagen</th>
 		</tr>
 
 		<?php
@@ -47,9 +30,10 @@
 				
 				<td><?= $p['nombre'] ?></td>
 				<td><?= $p['duracion'] ?></td>
-				<td><?= $p['sinopsis'] ?></td>
+				<td class="sinopsis"><?= $p['sinopsis'] ?></td>
 				<td><?= $p['genero'] ?></td>
 				<td><?= $p['estreno'] ?></td>
+				<td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($p['imagen']); ?>" height='500px' width='350px'></td>
 			</tr>
 		<?php } ?>
 	</table>

@@ -1,6 +1,6 @@
 <?php 
 
-//views/ListadoComplejos.php
+//views/ListadoPeliculas.php
 
 
 

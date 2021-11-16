@@ -3,21 +3,44 @@ body{
 	background-color: #ededed;
 }
 
-
 h1{
 	font-size: 65px;
 	text-align: center;
 	text-shadow: 0px 0px 10px #6073bf;
 }
 
-table, th, td {
-  border: 1px solid black;
+input ,select, label {
+	cursor: pointer;
 }
 
-select , table, th, td{
-	margin-top: 10px;
-	font-size: 30px;
-	align-self: center;
-	width: 100%;
+#pelis  { 
+	overflow-x:scroll;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  font-size: 26px;
+}
+
+.sinopsis{
+	width: 25%;
+}
+
+image{
+	border: none;
+
+
+}
+
+.estado{
+	background-color: lightblue;
+	
+}
