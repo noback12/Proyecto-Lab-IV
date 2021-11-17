@@ -24,7 +24,7 @@ require '../views/ListaPeliculaFuncion.php';
 		$complejos = $model->getPeliculas($_POST['id_complejo']);
 		$view= new ListaPeliculaComplejo();
 		$view->complejos = $complejos; 
-	//Sino elijo el complejo
+	//Sino elijo el complejo (otro controlador)
 	}else{	
 		$model = new Complejos();
 		$todos = $model->getTodos(); 

@@ -15,6 +15,7 @@ input ,select, label {
 
 #pelis  { 
 	overflow-x:scroll;
+	overflow-y:auto;
 }
 
 table {
@@ -28,19 +29,56 @@ th, td {
   text-align: center;
   padding: 8px;
   font-size: 26px;
+  overflow-y:scroll;
 }
 
 .sinopsis{
 	width: 25%;
+	height: auto;
 }
 
 image{
 	border: none;
-
-
 }
 
-.estado{
+.cbox_ocupado ,.cbox_ocupado:checked + label  {
+	background: red;
+}
+
+.cbox_disponible {
 	background-color: lightblue;
-	
 }
+
+.cbox_disponible:checked + label {
+	background-color: green;
+}
+
+
+.cbox_disponible:hover{
+	background-color: #9bff82;
+}
+
+#asientos{
+	  display: table;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.red {
+  background-color: red;
+}
+
+
+
+
+
+input[type=checkbox] {
+	 /*-webkit-appearance: none;*/
+   /*display:none;*/
+}
+
+
+
+
+
