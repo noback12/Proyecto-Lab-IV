@@ -36,7 +36,8 @@ class Salas extends Model {
 							 FROM asiento_funcion as af
 							 LEFT JOIN  asientos as a 
 							 ON af.id_asiento = a.id_asiento
-							 WHERE af.id_funcion =$funcion");
+							 WHERE af.id_funcion =$funcion
+							 ORDER BY a.letra , a.numero");
 		return $this->db->fetchAll();
 	}
 

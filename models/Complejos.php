@@ -53,10 +53,11 @@ class Complejos extends Model
 
 	public function getFunciones($id_peli , $id_comp)
 	{
-		$this->db->query("SELECT F.id_funcion ,F.dia , F.hora 
+		$this->db->query("SELECT * 
 							FROM funcion AS F
-							INNER JOIN Salas AS S ON S.id_sala = F.id_Sala AND S.id_complejo = $id_comp
-							WHERE id_pelicula = $id_peli 
+							LEFT JOIN PELICULAS AS P on P.id_pelicula = F.id_pelicula
+							Right JOIN Salas AS S ON S.id_sala = F.id_Sala AND S.id_complejo = $id_comp
+							WHERE F.id_pelicula = $id_peli 
 							
 					  ");
 		return $this->db->fetchAll();

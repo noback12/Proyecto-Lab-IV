@@ -1,5 +1,6 @@
 
 <!-- html/ListaPeliculaFuncion.php --> 
+<!-- en escencia es lo mismo que listaPeliculaComplejo pero con sus horarios -->
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -10,9 +11,36 @@
 		<title>ListaPeliculaFuncion  X</title>
 	</head>
 	<body>
-		<h1>ListaPeliculaFuncion </h1>
-			<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/ListadoPeliculas.php" method="post">
-				<select name="id_pelicula">
+		<?php
+			$peliculaElegida = $this->complejos["0"]; 
+		  ?>
+		<h1>Elegir funcion para <?= $peliculaElegida['nombre'] ?> </h1>
+
+			<div id="pelis">
+					<table>
+						
+						 	<td>
+							 	<div>
+									<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($peliculaElegida['imagen']); ?>" height='500px' width='350px'>
+									<p>
+										<?= $peliculaElegida['sinopsis'] ?>
+									</p>
+									<p>
+										<?= "Genero:". $peliculaElegida['genero'] ?>
+									</p>
+									<p>
+										<?="Estreno original: ". $peliculaElegida['estreno'] ?>
+									</p>
+									<p>
+										<?= "trailer?" ?>
+									</p>
+								</div>
+							</td>					
+					</table>
+				</div>
+
+			<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/SeleccionarAsientos.php" method="post">
+				<select name="id_funcion">
 				<?php foreach ($this->complejos as $p) {  ?>
 					<option value="<?= $p['id_funcion'] ?>">
 						<?= $p['dia'] ?> <?= $p['hora'] ?> 

@@ -30,7 +30,7 @@
 			<?php } ?>
 		</table>
 	
-	<form action="" method="post">
+	<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/listaPeliculasEnComplejo.php" method="post">
 		<label for="id_complejo">Complejo:</label>
 		<select name="id_complejo">
 			<?php foreach ($this->complejos as $c ) {  ?>

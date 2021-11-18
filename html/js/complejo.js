@@ -1,26 +1,32 @@
 "use strict"
 
-/*$( "#id_pelicula" ).change(function() {
-     var str = "" +  "<?= $p['id_pelicula'] ?>" ;
-     
-   $( "#test").text( str  );
 
-});
-*/
 
 //alert("prueba");
+//window.alert("Hello world!");
 
 
-
-$(function() {
-  var checkboxes = $("input[type=checkbox]")
-
-  // set the styles based on the initial state on load
-  checkboxes.is(':checked').css('background-color', 'red')
-
-  // update the styles as the checkbox states are changed
-  checkboxes.on('change', function() {
-    var checkbox = $(this)
-
-    checkbox.css('background-color', checkbox.is(':checked') ? 'red' : 'transparent'))
-  });
+//onclick = "GetSelected()"
+function GetSelected() {
+        //creo un array.
+        var selected = new Array();
+ 
+        //Referencio el div donde tengo los asientos.
+        var tblFruits = document.getElementById("asientos");
+ 
+        //Referencia a todos los CheckBoxes en el div.
+        var chks = tblFruits.getElementsByTagName("INPUT");
+        
+        //Recorro y meto todos los valores checkeados en un array
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                selected.push(chks[i].value);
+            }
+        }
+ 
+        //Display the selected CheckBox values.
+        if (selected.length > 0) {
+            //alert("Selected values: " + selected.join(","));
+            document.getElementById("reservas").value = selected.join(",");
+        }
+};

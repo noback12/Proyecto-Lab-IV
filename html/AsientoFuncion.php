@@ -13,7 +13,12 @@
 <body>
 	<h1>Asiento Funcion</h1>
 	<form action="" method="post">
+
 		<div id="asientos">
+			<div class="title-blk">
+                  <h2>PANTALLA</h2>
+            </div>
+
 			<?php
 			$asientos = $this->Salas ;
 			//Tengo un auxiliar para comparar
@@ -25,13 +30,16 @@
 					$aux = $fila["letra"];
 				}	 	
 			 	if($fila["ocupado"] != "1"){ ?>
-						<label class="cbox_disponible"><input type="checkbox"  value="Disponible"> Disponible</label>
+						<label class="cbox_disponible"><input type="checkbox" name='reservas1[]' value="<?=$fila['id_af'] ?>"  ><?=$fila['numero']  ?></label>
 		<?php 	}else{  ?>	
-						<label class="cbox_ocupado" > Ocupado </label>
-		<?php
-				}
+						<label class="cbox_ocupado" ><?=$fila['numero'] ?></label>
+		<?php	}
 
-			 } ?>
+			} ?>
+			<input name="id_funcion" type="hidden" value="<?= $asientos['0']['id_funcion'] ?>">
+			<input name="reservas" id="reservas" type="hidden" value="">
+
+
 		</div>
 		<input type="submit" value="Reservar" />
 	</form>

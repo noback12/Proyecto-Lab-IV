@@ -41,8 +41,33 @@ image{
 	border: none;
 }
 
+.title-blk {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 35px 0 30 px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDcxLjQ1IDQ1LjA2Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTtzdHJva2U6IzMzMztzdHJva2UtbWl0ZXJsaW1pdDoxMDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48dGl0bGU+VGlja2V0aW5nIHByb2Nlc3NfRGVza3RvcDwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUxNC42NSw1NDkyLjk0czIwNC40Ni05Nyw0NzAuNjgsMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1MTQuMjIgLTU0NDguODEpIi8+PC9zdmc+);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center top;
+}
+
+.cbox_ocupado ,.cbox_ocupado:checked + label ,.cbox_disponible , .cbox_disponible:checked + label {
+	margin: 3px;
+  width: 21px;
+  height: 21px;
+  border-bottom-left-radius: 26%;
+  border-bottom-right-radius: 26%;
+  color: #000000;
+  text-align: center;
+  font-size: 150%;
+  background-color: #f2f2f2;
+  Padding: 0,10px;
+}
+
 .cbox_ocupado ,.cbox_ocupado:checked + label  {
 	background: red;
+
 }
 
 .cbox_disponible {
@@ -62,15 +87,7 @@ image{
 	  display: table;
   margin-right: auto;
   margin-left: auto;
-
 }
-
-.red {
-  background-color: red;
-}
-
-
-
 
 
 input[type=checkbox] {

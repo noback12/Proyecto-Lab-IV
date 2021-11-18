@@ -8,7 +8,6 @@
  		 <?php include "style.css" ?>
 		</style>
 		<script  src="../html/js/jquery-3.6.0.js"  ></script>
-		
 		</style>
 		<title>Listado de Peliculas en  X</title>
 	</head>
@@ -17,9 +16,7 @@
 			<form action="" method="post">
 				<div id="pelis">
 					<table>
-					
 						<?php
-						//"this->complejos es el $complejos del view que se copia y pega en render
 						 foreach ($this->complejos as $c ) {  ?>
 						 	<td>
 							 	<div>
@@ -53,9 +50,7 @@
 
 				<p><input type="submit" value="Elegir Pelicula" /></p>
 			</form>
-
 	</body>
-
 	<script  src="../html/js/complejo.js" ></script>
 </html>
 
