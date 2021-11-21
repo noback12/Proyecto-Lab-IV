@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>Asiento Funcion</h1>
-	<form action="" method="post">
+	<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/ReservarAsientos.php" method="post">
 
 		<div id="asientos">
 			<div class="title-blk">
