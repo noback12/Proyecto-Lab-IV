@@ -26,8 +26,6 @@
 		$vFunc->Funciones = $Funciones;
 		$vFunc->render();
 	}
-
-
-
+	
 
 ?>
