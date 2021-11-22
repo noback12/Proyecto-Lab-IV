@@ -7,10 +7,10 @@
 	<style>
  		 <?php include "style.css" ?>
 	</style>
-	<title>Listado Peliculas</title>
+	<title>Reservar Asientos</title>
 </head>
 <body>
-	<h1>Listado de Peliculas</h1>
+	<h1>Reservar Asientos</h1>
 
 	<table>
 		<tr>
@@ -18,13 +18,21 @@
 		</tr>
 
 		<?php
-		 foreach ($this->Funciones as $f ) {  ?>
+		$cantEntradas = 0;
+		 foreach ($this->Funciones as $f ) 
+		 {  
+		 	$cantEntradas ++;
+		 	?>
 		 
 			<tr>
 				<td><?= $f['id_af'] ?></td>
+
 			</tr>
 		<?php } ?>
 	</table>
-	
+
+	<div>
+		<?= $cantEntradas ?> ENTRADAS = $ 
+	</div>
 </body>
 </html>
