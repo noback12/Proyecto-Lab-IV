@@ -10,6 +10,14 @@
 	<title>Listado Peliculas</title>
 </head>
 <body>
+	<div id="menu">
+    	<ul>
+    		<li><a href="../controllers/InicioSesion.php">INICIAR SESIÓN</a></li>
+
+  		</ul>
+
+  		<br/><br/>
+  	</div>
 	<h1>Listado de Peliculas</h1>
 
 	<table>
