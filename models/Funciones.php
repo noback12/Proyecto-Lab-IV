@@ -54,5 +54,56 @@
 			return $this->db->fetchAll();
 		}
 
+		//para elegir las salas existentes al crear una funcion  
+		public function AgregarFuncion1(){
+			$this->db->query("SELECT S.id_sala,S.numero,C.nombre
+							 FROM salas as S
+							 LEFT JOIN  complejos as C 
+							 ON C.id_complejo = S.id_complejo
+							 ORDER BY C.nombre ,S.numero ");
+		return $this->db->fetchAll();
+
+		}
+
+		public function AgregarFuncion2($dia,$hora,$sala,$peli){
+
+			//Nueva funcion 
+		     $this->db->query("INSERT INTO funcion (dia,hora,id_sala,id_pelicula) 
+					values ('$dia','$hora','$sala','$peli')	");
+
+		}
+
+
+		public function AsignarAsientos($dia,$hora,$sala,$peli){
+
+			$this->db->query("SELECT id_funcion FROM funcion order by id_funcion DESC limit 1");
+			$func = $this->db->fetchAll();
+			//Obtengo el id de la funcion 
+			$idFunc=  $func[0]["id_funcion"];
+
+			//creo un array
+			$ids_array = array();
+
+			$this->db->query("SELECT id_asiento FROM asientos WHERE id_sala = $sala");
+
+			$result = $this->db->fetchAll();
+
+			//var_dump($result);
+			foreach ($result as $key => $value) {
+				$ids_array[] = $value["id_asiento"] ;
+			}
+			
+			var_dump($ids_array);
+			
+
+			foreach ($ids_array as $key => $value) {
+				 $this->db->query("INSERT INTO asiento_funcion (id_asiento,id_funcion,ocupado) 
+					values ('$value','$idFunc','0')	");
+			}
+
+		    
+
+		}
+
 	}
 ?>

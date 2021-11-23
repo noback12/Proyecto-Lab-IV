@@ -19,6 +19,8 @@ class Peliculas extends Model {
 		return $this->db->fetch();
 	}
 
+
+
 	public function existePelicula($pId){
 		//si no existe
 		if(!ctype_digit($pId)) return false ;
@@ -32,6 +34,7 @@ class Peliculas extends Model {
 
 		return true ; 
 	}
+
 
 	public function AgregarPeli($nombre,$duracion,$sinopsis,$genero,$estreno,$imagen){
 

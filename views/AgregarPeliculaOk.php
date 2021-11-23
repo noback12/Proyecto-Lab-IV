@@ -1,15 +1,9 @@
 <?php
-//view/AgregarPeliculaOk.php
+    //view/AgregarPeliculaOk.php
 
-/**
- * 
- */
-class AgregarPeliculaOk extends view
-{
-	
-
-
-}
+    class AgregarPeliculaOk extends view
+    {
+    }
 
 
 ?>
