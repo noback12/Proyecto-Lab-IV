@@ -42,10 +42,11 @@ class Complejos extends Model
 	public function getPeliculas($id_comp){
 		//dinstict para que no me repita la pelicula por cada funcion 
 		//Muestro las peliculas , que estan en las funciones de las salas , de ese complejo
-		$this->db->query("SELECT Distinct  P.nombre , P.id_pelicula ,S.id_complejo , P.sinopsis , P.imagen
+		$this->db->query("SELECT Distinct  P.nombre , P.id_pelicula ,S.id_complejo , P.sinopsis , P.imagen , C.nombre as ncomp
 							FROM Peliculas AS P 
 							INNER JOIN Funcion AS F ON P.id_pelicula = F.id_pelicula 
 							INNER JOIN Salas AS S ON S.id_sala = F.id_Sala AND S.id_complejo = $id_comp
+							INNER JOIN complejos as C on S.id_complejo = C.id_complejo
 					  ");
 		return $this->db->fetchAll();
 

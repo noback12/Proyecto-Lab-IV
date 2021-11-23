@@ -54,7 +54,7 @@
 	    	  min="1895-03-22"/>
 		<p>
 		<p>
-			<label for="imagen">URL Imagen:</label><input type="text" id="imagen" name="imagen">
+			<label for="imagen">URL Imagen:</label><input type="text" id="imagen" name="imagen">(JPEG o PNG)
 		</p>
 		<input type="submit" value="Agregar Pelicula" />
 		</p>

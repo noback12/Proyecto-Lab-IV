@@ -9,10 +9,11 @@
 		</style>
 		<script  src="../html/js/jquery-3.6.0.js"  ></script>
 		</style>
-		<title>Listado de Peliculas en  X</title>
+		<?php $lugar =$this->complejos  ?>
+		<title>Listado de Peliculas en <?= $lugar[0]['ncomp'] ?>  X</title>
 	</head>
 	<body>
-		<h1>Listado de Peliculas en complejo </h1>
+		<h1>Listado de Peliculas en <?= $lugar[0]['ncomp'] ?> </h1>
 			<form action="" method="post">
 				<div id="pelis">
 					<table>

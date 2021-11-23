@@ -1,21 +1,21 @@
 body{ 
 
-	background-color: #ededed;
+  background-color: #ededed;
 }
 
 h1{
-	font-size: 65px;
-	text-align: center;
-	text-shadow: 0px 0px 10px #6073bf;
+  font-size: 65px;
+  text-align: center;
+  text-shadow: 0px 0px 10px #6073bf;
 }
 
 input ,select, label {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #pelis  { 
-	overflow-x:scroll;
-	overflow-y:auto;
+  overflow-x:scroll;
+  overflow-y:auto;
 }
 
 table {
@@ -37,13 +37,12 @@ tbody tr:nth-child(odd){
 }
 
 .sinopsis{
-	width: 25%;
-	height: auto;
+  width: 25%;
+  height: auto;
 }
 
 img{
-	border: none;
-  max-height: 500px;
+  max-height: 350px;
   max-width: 350px;
 }
 
@@ -59,7 +58,7 @@ img{
 }
 
 .cbox_ocupado ,.cbox_ocupado:checked + label ,.cbox_disponible , .cbox_disponible:checked + label {
-	margin: 3px;
+  margin: 3px;
   width: 21px;
   height: 21px;
   border-bottom-left-radius: 26%;
@@ -72,36 +71,84 @@ img{
 }
 
 .cbox_ocupado ,.cbox_ocupado:checked + label  {
-	background: red;
+  background: red;
 
 }
 
 .cbox_disponible {
-	background-color: lightblue;
+  background-color: lightblue;
 }
 
 .cbox_disponible:checked + label {
-	background-color: green;
+  background-color: green;
 }
 
 
 .cbox_disponible:hover{
-	background-color: #9bff82;
+  background-color: #9bff82;
 }
 
 #asientos{
-	  display: table;
+  display: table;
   margin-right: auto;
   margin-left: auto;
 }
 
 
 input[type=checkbox] {
-	 /*-webkit-appearance: none;*/
-   /*display:none;*/
+  /*-webkit-appearance: none;*/
+  /*display:none;*/
 }
 
 
+nav ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li{
+  float:left; 
+  border: 1px solid green;
+  width: 24.5%;
+  background: #FFFFaa;
+  cursor:pointer;
+
+}
 
 
+nav li:hover {
+  box-shadow: 2px 2px 10px #000000;
+  background: #ffffff;
+}
+      
+a{
+  border: 1px solid black;
+  text-decoration: none;
+  color:#008700;
+  font-family: Calibri;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
 
+a:first-letter{
+        text-transform: uppercase;
+}
+
+nav ul ul{
+  display: none;
+}
+
+nav ul ul li{
+  width: 100%;
+
+}
+
+nav ul li:hover ul{
+  display: block;
+}
+
+#menu{
+  margin-bottom: 20px;
+
+}

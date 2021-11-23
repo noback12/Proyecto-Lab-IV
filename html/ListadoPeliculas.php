@@ -7,18 +7,49 @@
 	<style>
  		 <?php include "style.css" ?>
 	</style>
-	<title>Listado Peliculas</title>
+	<title>Inicio</title>
 </head>
 <body>
+
+	<h1>Inicio</h1>
 	<div id="menu">
-    	<ul>
-    		<li><a href="../controllers/InicioSesion.php">INICIAR SESIÓN</a></li>
+    	<nav >
+			<ul>
+				<li>
+					<a href="../controllers/InicioSesion.php">INICIAR SESIÓN</a>
+					<ul>
+						<li>
+							<a href="asd" target="_blank">Item 1.1</a>
+						</li>
 
-  		</ul>
+					</ul>
+				</li>
+				<li>
+					<a href="asd" target="_blank">item 2</a>
+					<ul>
+						<li>
+							<a href="asd" target="_blank">Item 2.1</a>
+						</li>
+						
 
-  		<br/><br/>
+					</ul>
+				</li>
+				<li>
+					<a href="asd" target="_blank">Item 3</a>
+					<ul>
+						<li>
+							<a href="asd" target="_blank">Item 3.1</a>
+						</li>
+	
+
+					</ul>
+				</li>
+			</ul>
+		</nav>
   	</div>
-	<h1>Listado de Peliculas</h1>
+	
+	<br><br><br>
+
 
 	<table>
 		<tr>
