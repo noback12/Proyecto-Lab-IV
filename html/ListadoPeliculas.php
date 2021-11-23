@@ -16,13 +16,17 @@
     	<nav >
 			<ul>
 				<li>
-					<a href="../controllers/InicioSesion.php">INICIAR SESIÓN</a>
+					<?php  
+					if(isset($_SESSION['logueado']) ){
+						echo "<a href='../controllers/cerrarSesion.php'>Cerrar SESIÓN</a>";
+					}else echo "<a href='../controllers/InicioSesion.php'>INICIAR SESIÓN</a> 
+					
 					<ul>
 						<li>
-							<a href="asd" target="_blank">Item 1.1</a>
+							<a href='../controllers/AltaUsuario.php' target='_blank'>Crear usuario</a>
 						</li>
 
-					</ul>
+					</ul> "?>
 				</li>
 				<li>
 					<a href="asd" target="_blank">item 2</a>
@@ -34,15 +38,22 @@
 
 					</ul>
 				</li>
-				<li>
-					<a href="asd" target="_blank">Item 3</a>
-					<ul>
-						<li>
-							<a href="asd" target="_blank">Item 3.1</a>
-						</li>
-	
-
-					</ul>
+				<?php  
+					if(isset($_SESSION['empleado']) ){ 
+						echo "
+								 <li>
+										<a href='' target=_'blank'> Menu empleado</a> 
+									<ul>
+										<li> 
+											<a href='http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-lab-IV/controllers/AgregarPelicula.php' target='_blank'>agregar pelicula</a>
+										</li>
+										<li> 
+											<a href='asd' target='_blank'>agregar funcion</a>
+										</li>
+									</ul>
+								</li>
+							";}
+				?>
 				</li>
 			</ul>
 		</nav>

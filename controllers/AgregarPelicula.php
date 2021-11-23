@@ -9,39 +9,44 @@ require '../views/AgregarPelicula.php';
 require '../views/AgregarPeliculaOk.php';
 
 $mPeli = new Peliculas();
+    session_start();
+    if(isset($_SESSION['empleado']) ){
+        //if(count($_POST)>0){
+        if(isset($_POST['nombre'])){
 
-//if(count($_POST)>0){
-if(isset($_POST['nombre'])){
+        	//Es de prueba , agregar al modelo pelicula
+        	$mNuevaPelicula = new Peliculas();
 
-	//Es de prueba , agregar al modelo pelicula
-	$mNuevaPelicula = new Peliculas();
+        	?><table>
+        <?php 
 
-	?><table>
-<?php 
+            foreach ($_POST as $key => $value) {
+                echo "<tr>";
+                echo "<td>";
+                echo $key;
+                echo "</td>";
+                echo "<td>";
+                echo $value;
+                echo "</td>";
+                echo "</tr>";
+            }
 
-    foreach ($_POST as $key => $value) {
-        echo "<tr>";
-        echo "<td>";
-        echo $key;
-        echo "</td>";
-        echo "<td>";
-        echo $value;
-        echo "</td>";
-        echo "</tr>";
+        ?>
+        </table><?php 
+        	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno'],$_POST['imagen']);
+
+        	$vPeli = new AgregarPeliculaOK();
+        }else{
+        	$vPeli = new AgregarPelicula();
+        	$vPeli->Peliculas = $mPeli->getTodos();
+        }
+
+        $vPeli->render();
+    }else{
+
+        header("Location: InicioSesionEmpleado.php");
+
     }
-
-?>
-</table><?php 
-	$mNuevaPelicula->AgregarPeli($_POST['nombre'],$_POST['duracion'],$_POST['sinopsis'],$_POST['genero'],$_POST['estreno'],$_POST['imagen']);
-
-	$vPeli = new AgregarPeliculaOK();
-}else{
-	$vPeli = new AgregarPelicula();
-	$vPeli->Peliculas = $mPeli->getTodos();
-}
-
-$vPeli->render();
-
 
 
 ?>

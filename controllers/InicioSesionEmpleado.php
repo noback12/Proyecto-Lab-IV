@@ -10,20 +10,18 @@ require '../views/InicioSesionEOk.php';
 $mEmp = new Empleados();
 
 if(isset($_POST['email'])){
-	//validaciones
-	
-	
+	//validaciones	
 
 	$email = $_POST['email'];
 	$passwd = sha1($_POST['contraseña']);
 	$Empleados = $mEmp->Inicio($email, $passwd);
 	
-
 	if(!empty($Empleados) ){
 		session_start();
 		$_SESSION['logueado'] = true;
 		$_SESSION['email'] = $email ;
-		header("Location: elegirComplejo.php");
+		$_SESSION['empleado'] = true;
+		header("Location: ListadoPeliculas.php");
 		$vEmp = new InicioSesionEOk();
 		$vEmp->Empleados = $Empleados;
 	}else{

@@ -33,7 +33,7 @@
 </head>
 
 <body>
-	<h1>SARAZA</h1>
+	<h1>Menu Empleado</h1>
 
 	<?php
 		 foreach ($this->Empleados as $p ) {  ?>
@@ -43,6 +43,13 @@
 				<td><?= $p['apellido'] ?></td>
 			</tr>
 		<?php } ?>
+
+		<href ....controller agregar funcion 
+		<....agregar pelicula....> 
+
+
+
+
 </body>
 
 </html>

@@ -10,29 +10,32 @@ require '../views/InicioSesionOk.php';
 $mUser = new Usuarios();
 
 if(isset($_POST['email'])){
-	//validaciones
+	//chequear validaciones email
 
 	$email = $_POST['email'];
 	$passwd = sha1($_POST['contraseña']);
-	
 	$Usuarios = $mUser->Inicio($email, $passwd);
+	
+	//Si no devuelve una fila vacia 
 	if(!empty($Usuarios) ){
+		//Se inicia sesion
 		session_start();
 		$_SESSION['logueado'] = true;
 		$_SESSION['email'] = $email ;
-		header("Location: elegirComplejo.php");
+		header("Location: ListadoPeliculas.php");
 		$vUser = new InicioSesionOk();
 		$vUser->Usuarios = $Usuarios;
+
 	}else{
+		//Si la contraseña o usuario incorrecto 
 		echo "<script>alert('Usuario o contraseña incorrecto')</script>";
 		$vUser = new InicioSesion();
 	}
 }	
 
 else{
-
+	//Primer ingreso 
 	$vUser = new InicioSesion();
-	//$vUser->Usuarios = $Usuarios;
 }
 
 $vUser->render();

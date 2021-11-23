@@ -9,9 +9,8 @@ class Usuarios extends Model
 {
 	
 	public function Inicio($email, $passwd){
-
-		//valid1 
-		//
+ 
+		
 		$this->db->query("SELECT *
 										FROM usuarios
 										WHERE email='$email' and contraseña='$passwd'
