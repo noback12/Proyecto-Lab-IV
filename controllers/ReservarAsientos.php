@@ -15,9 +15,7 @@
 	if(isset($_POST['reservas1'])){
 		//Tengo un array con los ids de los asientos-funcion a reservar
 		$mostrar = $arrayReservas;
-		var_dump($mostrar);
 
-		//
 
 		$mFunc = new Funciones();
 		$Funciones = $mFunc->reservar1($arrayReservas);

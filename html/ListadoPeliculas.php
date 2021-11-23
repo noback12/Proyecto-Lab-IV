@@ -34,7 +34,7 @@
 				<td class="sinopsis"><?= $p['sinopsis'] ?></td>
 				<td><?= $p['genero'] ?></td>
 				<td><?= $p['estreno'] ?></td>
-				<td><img src="../images/<?= $p['imagen2'] ?>"></td>
+				<td><img src="../images/<?= $p['imagen'] ?>"></td>
 
 			</tr>
 		<?php } ?>

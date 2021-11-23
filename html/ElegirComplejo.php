@@ -12,6 +12,7 @@
 </head>
 <body>
 	<h1>Elegir Complejo</h1>
+	
 	<table>
 			<tr>
 				<th>Nombre</th>

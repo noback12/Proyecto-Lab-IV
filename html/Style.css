@@ -32,6 +32,10 @@ th, td {
   overflow-y:scroll;
 }
 
+tbody tr:nth-child(odd){
+  background: rgba(0,0,0,.2);
+}
+
 .sinopsis{
 	width: 25%;
 	height: auto;
@@ -40,7 +44,7 @@ th, td {
 img{
 	border: none;
   max-height: 500px;
-  max-height: 500px;
+  max-width: 350px;
 }
 
 .title-blk {

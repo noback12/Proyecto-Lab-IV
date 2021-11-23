@@ -20,7 +20,7 @@
 						 foreach ($this->complejos as $c ) {  ?>
 						 	<td>
 							 	<div>
-									<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($c['imagen']); ?>" height='500px' width='350px'>
+									<img src="../images/<?= $c['imagen'] ?>">
 										
 									<p>
 										<?= $c['id_pelicula'] ?>

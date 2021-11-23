@@ -70,43 +70,16 @@ class Peliculas extends Model {
 			die("error fecha invalida");
 		}
 
-		//Si se quiere subir una imagen
+		$link= "$imagen";
+    	$destdir = '../images';
+    	$img=file_get_contents($link);
+    	file_put_contents($destdir.substr($link, strrpos($link,'/')), $img);
 
-   //Recogemos el archivo enviado por el formulario
-   $imagen = $_FILES['imagen']['name'];
-   //Si el archivo contiene algo y es diferente de vacio
-   if (isset($imagen) && $imagen != "") {
-      //Obtenemos algunos datos necesarios sobre el archivo
-      $tipo = $_FILES['imagen']['type'];
-      $tamano = $_FILES['imagen']['size'];
-      $temp = $_FILES['imagen']['tmp_name'];
-      //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
-     if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 200000000000000))) {
-        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
-        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
-     }
-     else {
-        //Si la imagen es correcta en tamaño y tipo
-        //Se intenta subir al servidor
-        if (move_uploaded_file($temp, '../images/'.$imagen)) {
-            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
- 
-            //Mostramos el mensaje de que se ha subido co éxito
-            echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-            //Mostramos la imagen subida
-            echo '<p><img src="images/'.$imagen.'"></p>';
-        }
-        else {
-           //Si no se ha podido subir la imagen, mostramos un mensaje de error
-           echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
-        }
-      }
-   }
-
+    	$lugar = $destdir.substr($link, strrpos($link,'/'));
 
 		
-		$this->db->query("INSERT INTO peliculas (nombre ,duracion,sinopsis,genero,estreno,imagen) 
-			values ('$nombre','$duracion','$sinopsis','$genero','$estreno','$imagen')	");
+		$this->db->query("INSERT INTO peliculas (nombre ,duracion,sinopsis,genero,estreno,imagen2) 
+			values ('$nombre','$duracion','$sinopsis','$genero','$estreno','$lugar')	");
 	}
 
 }

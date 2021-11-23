@@ -5,7 +5,9 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<link href="Style.css" rel="stylesheet" type="text/css" />
+		<style>
+ 		 <?php include "style.css" ?>
+	</style>
 		<script  src="js/jquery-3.6.0.js"  ></script>
 		</style>
 		<title>ListaPeliculaFuncion  X</title>
@@ -21,7 +23,7 @@
 						
 						 	<td>
 							 	<div>
-									<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($peliculaElegida['imagen']); ?>" height='500px' width='350px'>
+									<td><img src="../images/<?= $peliculaElegida['imagen'] ?>">
 									<p>
 										<?= $peliculaElegida['sinopsis'] ?>
 									</p>
