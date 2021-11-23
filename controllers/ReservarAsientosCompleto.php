@@ -17,7 +17,6 @@
 	if(isset($_POST['reservas2'])){
 		$arrayReservas = $_POST['reservas2'];
 		$mostrar = $arrayReservas;
-		var_dump($mostrar);
 
 		$mFunc = new Funciones();
 		$Funciones = $mFunc->reservar2($arrayReservas);

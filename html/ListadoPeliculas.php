@@ -21,6 +21,7 @@
 			<th>Genero</th>
 			<th>Estreno</th>
 			<th>imagen</th>
+
 		</tr>
 
 		<?php
@@ -33,7 +34,8 @@
 				<td class="sinopsis"><?= $p['sinopsis'] ?></td>
 				<td><?= $p['genero'] ?></td>
 				<td><?= $p['estreno'] ?></td>
-				<td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($p['imagen']); ?>" height='500px' width='350px'></td>
+				<td><img src="../images/<?= $p['imagen2'] ?>"></td>
+
 			</tr>
 		<?php } ?>
 	</table>

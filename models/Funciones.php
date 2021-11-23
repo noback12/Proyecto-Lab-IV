@@ -88,14 +88,12 @@
 
 			$result = $this->db->fetchAll();
 
-			//var_dump($result);
+
 			foreach ($result as $key => $value) {
 				$ids_array[] = $value["id_asiento"] ;
 			}
 			
-			var_dump($ids_array);
-			
-
+			//Asigno todos los asientos de la sala a desocupados en el horario elegido
 			foreach ($ids_array as $key => $value) {
 				 $this->db->query("INSERT INTO asiento_funcion (id_asiento,id_funcion,ocupado) 
 					values ('$value','$idFunc','0')	");

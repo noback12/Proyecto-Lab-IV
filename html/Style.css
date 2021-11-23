@@ -37,8 +37,10 @@ th, td {
 	height: auto;
 }
 
-image{
+img{
 	border: none;
+  max-height: 500px;
+  max-height: 500px;
 }
 
 .title-blk {

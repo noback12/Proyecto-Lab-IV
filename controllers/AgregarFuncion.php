@@ -14,8 +14,10 @@ $mFuncion = new Funciones();
 
 if(isset($_POST['pelicula'],$_POST['dia'])){
 
+    //Creo la funcion
     $mFuncion->AgregarFuncion2($_POST['dia'],$_POST['hora'],$_POST['Sala'],$_POST['pelicula']);
 
+    //Asigno los asientos a dicha funcion a desocupados
     $mFuncion->AsignarAsientos($_POST['dia'],$_POST['hora'],$_POST['Sala'],$_POST['pelicula']);
 
     $todas = $mFuncion->getTodos(); 
