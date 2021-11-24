@@ -5,7 +5,7 @@
 require '../fw/fw.php';
 require '../models/Usuarios.php';
 require '../views/InicioSesion.php';
-require '../views/InicioSesionOk.php';
+
 
 $mUser = new Usuarios();
 
@@ -23,8 +23,6 @@ if(isset($_POST['email'])){
 		$_SESSION['logueado'] = true;
 		$_SESSION['email'] = $email ;
 		header("Location: inicio");
-		$vUser = new InicioSesionOk();
-		$vUser->Usuarios = $Usuarios;
 
 	}else{
 		//Si la contraseña o usuario incorrecto 
