@@ -5,7 +5,6 @@
 require '../fw/fw.php';
 require '../models/Empleados.php';
 require '../views/InicioSesionEmpleado.php';
-require '../views/InicioSesionEOk.php';
 
 $mEmp = new Empleados();
 

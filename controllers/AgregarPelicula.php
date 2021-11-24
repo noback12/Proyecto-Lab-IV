@@ -25,6 +25,6 @@
         }
         $vPeli->render();
     }else{
-        header("Location: InicioSesionEmpleado.php");
+        header("Location: InicioSesionEmpleado");
     }
 ?>

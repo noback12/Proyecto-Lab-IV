@@ -9,7 +9,7 @@ RewriteRule ^inicio$ controllers/ListadoPeliculas.php
 RewriteRule ^InicioSesion$ controllers/InicioSesion.php
 RewriteRule ^CerrarSesion$ controllers/CerrarSesion.php
 RewriteRule ^AgregarPelicula$ controllers/AgregarPelicula.php
-RewriteRule ^inicioSesionEmpleado$ controllers/InicioSesionEmpleado.php
+RewriteRule ^InicioSesionEmpleado$ controllers/InicioSesionEmpleado.php
 RewriteRule ^AgregarFuncion$ controllers/AgregarFuncion.php
 RewriteRule ^AltaUsuario$ controllers/AltaUsuario.php
 RewriteRule ^elegirComplejo$ controllers/elegirComplejo.php
