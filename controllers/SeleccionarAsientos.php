@@ -6,23 +6,30 @@
 	require '../models/Salas.php';
 	require '../views/asientoFuncion.php';
 
+	session_start();
+	if($_SESSION['logueado'] ){
 
-	if(isset($_POST['reservas1'])){
-		//Tengo un array con los ids de los asientos-funcion a reservar
-		$mostrar = $_POST['reservas1'];
-		var_dump($mostrar);
 
-	}else{	
+		if(isset($_POST['reservas1'])){
+			//Tengo un array con los ids de los asientos-funcion a reservar
+			$mostrar = $_POST['reservas1'];
+			var_dump($mostrar);
 
-	//Valido el post y ...
-	$idfuncion = $_POST['id_funcion'];
+		}else{	
 
-	$mSeleccionAsientos = new Salas();
-	$AsientosFuncion = $mSeleccionAsientos->asientoFuncion("$idfuncion");
+		//Valido el post y ...
+		$idfuncion = $_POST['id_funcion'];
 
-	$vAsientoFuncion = new AsientoFuncion();
-	$vAsientoFuncion->Salas = $AsientosFuncion ;
-	$vAsientoFuncion->render();
+		$mSeleccionAsientos = new Salas();
+		$AsientosFuncion = $mSeleccionAsientos->asientoFuncion("$idfuncion");
+
+		$vAsientoFuncion = new AsientoFuncion();
+		$vAsientoFuncion->Salas = $AsientosFuncion ;
+		$vAsientoFuncion->render();
+
+		}
+	}else{
+			header("Location: InicioSesion.php");
 
 	}
 

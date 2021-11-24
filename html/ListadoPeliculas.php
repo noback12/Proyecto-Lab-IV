@@ -18,8 +18,8 @@
 				<li>
 					<?php  
 					if(isset($_SESSION['logueado']) ){
-						echo "<a href='../controllers/cerrarSesion.php'>Cerrar SESIÓN</a>";
-					}else echo "<a href='../controllers/InicioSesion.php'>INICIAR SESIÓN</a> 
+						echo "<a href='CerrarSesion'>Cerrar SESIÓN</a>";
+					}else echo "<a href='InicioSesion'>INICIAR SESIÓN</a> 
 					
 					<ul>
 						<li>
@@ -84,7 +84,7 @@
 				<td class="sinopsis"><?= $p['sinopsis'] ?></td>
 				<td><?= $p['genero'] ?></td>
 				<td><?= $p['estreno'] ?></td>
-				<td><img src="../images/<?= $p['imagen'] ?>"></td>
+				<td><img src="images/<?= $p['imagen'] ?>"></td>
 
 			</tr>
 		<?php } ?>

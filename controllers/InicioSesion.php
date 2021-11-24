@@ -22,7 +22,7 @@ if(isset($_POST['email'])){
 		session_start();
 		$_SESSION['logueado'] = true;
 		$_SESSION['email'] = $email ;
-		header("Location: ListadoPeliculas.php");
+		header("Location: inicio");
 		$vUser = new InicioSesionOk();
 		$vUser->Usuarios = $Usuarios;
 

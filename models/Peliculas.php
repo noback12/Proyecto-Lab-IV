@@ -92,6 +92,25 @@ class Peliculas extends Model {
 			values ('$nombre','$duracion','$sinopsis','$genero','$estreno','$lugar')	");
 	}
 
+
+	public function eliminarPeli($pId){
+
+		//si no existe
+		if(!ctype_digit($pId)) throw new ValidacionException("Error") ;
+		//si es menor a uno
+		if($pId < 1) throw new ValidacionException("Error");
+		//se obtienen mas de 1 resultado  ($pId echo ? )
+		$this->db->query("SELECT * FROM peliculas
+						 WHERE id_pelicula = $pId ");
+
+		if($this->db->numRows() !=1) throw new ValidacionException("Error");
+
+		$this->db->query("DELETE FROM peliculas WHERE id_pelicula = $pId");
+		//Tambien borro las funciones asociadas
+		$this->db->query("DELETE FROM funcion WHERE id_pelicula IN ($pId)");
+
+	}
+
 }
 
 

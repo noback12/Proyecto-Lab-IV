@@ -5,7 +5,20 @@ RewriteEngine on
 #alt + 94 circunflejo 
 #lado izq es lo que se busca(expresion regular) ,lado der lo que se reemplaza 
 
+RewriteRule ^inicio$ controllers/ListadoPeliculas.php
+RewriteRule ^InicioSesion$ controllers/InicioSesion.php
+RewriteRule ^CerrarSesion$ controllers/CerrarSesion.php
 RewriteRule ^AgregarPelicula$ controllers/AgregarPelicula.php
+RewriteRule ^inicioSesionEmpleado$ controllers/InicioSesionEmpleado.php
+RewriteRule ^AgregarFuncion$ controllers/AgregarFuncion.php
+RewriteRule ^AltaUsuario$ controllers/AltaUsuario.php
+RewriteRule ^elegirComplejo$ controllers/elegirComplejo.php
+RewriteRule ^ListadoFunciones$ controllers/ListadoFunciones.php 
+RewriteRule ^ListadoPeliculas$ controllers/ListadoPeliculas.php 
+RewriteRule ^listaPeliculasEnComplejo$ controllers/listaPeliculasEnComplejo.php
+RewriteRule ^ReservarAsientos$ controllers/ReservarAsientos.php
+RewriteRule ^ReservarAsientosCompleto$ controllers/ReservarAsientosCompleto.php
+RewriteRule ^SeleccionarAsientos$ controllers/SeleccionarAsientos.php
 
 #cuantificador ,el numero que hizo match de la izq 
 #RewriteRule ^Detalle-pelicula-([0-9]+)$ controllers/detallepelicula.php?id=$1
