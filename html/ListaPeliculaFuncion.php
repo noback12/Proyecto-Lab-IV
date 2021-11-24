@@ -33,9 +33,6 @@
 									<p>
 										<?="Estreno original: ". $peliculaElegida['estreno'] ?>
 									</p>
-									<p>
-										<?= "trailer?" ?>
-									</p>
 								</div>
 							</td>					
 					</table>

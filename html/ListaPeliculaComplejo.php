@@ -24,9 +24,6 @@
 							 	<div>
 									<img src="images/<?= $c['imagen'] ?>">	
 									<p>
-										<?= $c['id_pelicula'] ?>
-									</p>
-									<p>
 										<?= $c['nombre'] ?>
 									</p>
 									<p>
