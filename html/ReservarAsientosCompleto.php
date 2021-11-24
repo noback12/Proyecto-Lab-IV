@@ -1,12 +1,13 @@
-<!-- htmi/ReservarAsientosCompleto.php -->
-
+<!-- html/ReservarAsientosCompleto.php -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Reserva De asientos Exitosa</title>
+	<style type="text/css">
+		<?php include "style.css" ?>
+	</style>
+	<title>Reserva de asientos exitosa</title>
 </head>
 <body>
 	<h1>CONFIRMACION DE COMPRA</h1>
@@ -54,8 +55,10 @@
 				</tr>
 		</table>
 
-
-	<a href="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/ListadoPeliculas.php">Home</a>
+	<br/>
+	<div class="a1">
+		<p><a class="but" href="inicio">VOLVER AL MENÚ</a></p>
+	</div>
 
 </body>
 </html>

@@ -10,8 +10,6 @@ class Empleados extends Model
 	
 	public function Inicio($email, $passwd){
 
-		//valid1 
-		//
 		$this->db->query("SELECT *
 										FROM empleados
 										WHERE email='$email' and contraseña='$passwd'

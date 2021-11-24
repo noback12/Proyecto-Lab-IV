@@ -1,5 +1,4 @@
 body{ 
-
   background-color: #ededed;
 }
 
@@ -88,8 +87,9 @@ img{
   background-color: #9bff82;
 }
 
-#asientos{
+#asientos , #show{
   display: table;
+  margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -108,29 +108,18 @@ nav ul{
 
 nav li{
   float:left; 
-  border: 1px solid green;
+  border: 1px #2e518b;
   width: 24.5%;
   background: #FFFFaa;
   cursor:pointer;
 
 }
 
-
 nav li:hover {
   box-shadow: 2px 2px 10px #000000;
   background: #ffffff;
 }
       
-a{
-  border: 1px solid black;
-  text-decoration: none;
-  color:#008700;
-  font-family: Calibri;
-  display: block;
-  text-align: center;
-  font-weight: bold;
-}
-
 a:first-letter{
         text-transform: uppercase;
 }
@@ -149,7 +138,131 @@ nav ul li:hover ul{
 }
 
 #menu{
-  margin-bottom: 20px;
+  margin: 0px;
 
 }
 
+.a1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Verdana;
+      font-size: 20px;
+    }
+
+    .but{
+      background-color: #2e518b;
+      border: 1px solid black;
+      padding: 10px;
+      color:white;
+      font-size: 18px;
+      font-family: Calibri;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .but:hover{
+      background-color: #74AEE4;
+    }
+
+    #nav{
+      text-decoration: none;
+      color:white;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    label{
+      font-size: 25px;
+    }
+
+    select{
+      padding: 5px;
+      width: 180px;
+    }
+
+    .selPer{
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      outline:0;
+      box-shadow: none;
+      border: 0!important;
+      background-image: none;
+      flex: 1;
+      padding: 0.5em;
+      cursor: pointer;
+      font-size: 1em;
+      margin-left: 10%;
+    }
+
+    .selPer::-ms-expand {
+        display: none;
+    }
+
+    .sel{
+      position: relative;
+      display: flex;
+      height: 40px;
+      overflow: hidden;
+      border-radius: .25em;
+    }
+
+    .sel::after{
+      content: '\25BC';
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1em;
+      cursor: pointer;
+      pointer-events: none;
+    }
+
+     #selCom{
+      width:300px;
+    }
+
+    #selPel{
+      width:470px;
+    }
+
+    #selFun{
+      width: 550px;
+    }
+
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+
+.cartel{
+  height: 100px;
+  width: 310px;
+  background-color: #EFFC6C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: .25em;
+}
+
+.der{
+  float: right;
+  margin-top: -11px;
+}
+
+.izq{
+  float: left;
+}
+
+.hti{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

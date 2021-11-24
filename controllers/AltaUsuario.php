@@ -14,6 +14,8 @@
 
     	//Es de prueba , agregar al modelo pelicula
     	$mNuevoUser = new Usuarios();
+
+    	
     	$mNuevoUser->Alta($_POST['nombre'],$_POST['apellido'],$_POST['email'],sha1($_POST['contraseña']));
 
     	$vUser = new AltaUsuarioOk();

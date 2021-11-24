@@ -23,7 +23,7 @@
 						
 						 	<td>
 							 	<div>
-									<td><img src="../images/<?= $peliculaElegida['imagen'] ?>">
+									<img src="images/<?= $peliculaElegida['imagen'] ?>">
 									<p>
 										<?= $peliculaElegida['sinopsis'] ?>
 									</p>
@@ -41,14 +41,28 @@
 					</table>
 				</div>
 
-			<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/SeleccionarAsientos.php" method="post">
-				<select name="id_funcion">
+				<br/><br/>
+
+			<form action="SeleccionarAsientos" method="post">
+				<div class="sel" id="selFun">
+				<label for="id_funcion">Seleccione una función:</label>
+				<select class="selPer" name="id_funcion">
 				<?php foreach ($this->complejos as $p) {  ?>
 					<option value="<?= $p['id_funcion'] ?>">
 						<?= $p['dia'] ?> <?= $p['hora'] ?> 
 					</option>
 				<?php } ?>
-				<p><input type="submit" value="Elegir Funcion" /></p>
+				</select>
+				</div>
+
+				<br/><br/>
+				<div class="izq">
+					<p><a class="but" id="but2" href="inicio">VOLVER AL MENÚ</a></p>
+				</div>
+
+				<div class="der">	
+					<p><input class="but" type="submit" value="ELEGIR FUNCIÓN" /></p>
+				</div>
 			</form>
 	</body>
 

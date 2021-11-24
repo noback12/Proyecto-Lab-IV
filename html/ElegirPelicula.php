@@ -1,5 +1,5 @@
 
-<!-- html/ListadoPeliculas.php --> 
+<!-- html/ElegirPelicula.php --> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,14 +12,22 @@
 <body>
 	
 	<form action="" method="post" >
-		<div> 
+		<div class="a1"> 
 			<p>Dia: <?= $_POST['dia']?></p> 
 			<input type="hidden" name="dia" value="<?= $_POST['dia']?>">
+		</div>
+
+		<div class="a1">
 			<p>hora: <?= $_POST['hora']?></p>
 			<input type="hidden" name="hora" value="<?= $_POST['hora']?>">
+		</div>
+
+		<div class="a1">
 			<p>Sala <?= $_POST['Sala']?></p>
 			<input type="hidden" name="Sala" value="<?= $_POST['Sala']?>">
 		</div>  
+
+		<div class="a1">
 		<p><label for="pelicula">Pelicula:</label>
 				<select name="pelicula">
 
@@ -33,10 +41,12 @@
 				<?php } ?>
 					
 				</select></p>
+		</div>
 
 
-
-		<input type="submit" value="Elegir pelicula " />
+		<div class="a1">
+			<input class="but" type="submit" value="ELEGIR PELÍCULA " />
+		</div>
 		
 	</form>
 	

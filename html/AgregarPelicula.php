@@ -5,6 +5,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<style type="text/css">
+		<?php include "style.css" ?>
+	</style>
 	<title>Agregar pelicula</title>
 </head>
 <body>
@@ -12,14 +15,20 @@
 	
 	<form action="" method="post" enctype="multipart/form-data">
 
-		<p><label for="nombre">nombre:</label><input type="text" name="nombre"></p>
-		<!--<p><label for="duracion">duracion:</label> <input type="text" name="duracion"></p>-->
+		<div class="a1">
+		<p><label for="nombre">Nombre:</label><input type="text" name="nombre"></p>
+		</div>
 
+		<div class="a1">
 		<p><label for="duracion">Duracion:</label><input type="time" value="00:01" name="duracion"></p>
-		 
+		</div>
 
-		<p><label for="sinopsis">sinopsis:</label><input type="text" name="sinopsis"></p> 
-		<p><label for="genero">genero:</label>
+		<div class="a1">
+		<p><label for="sinopsis">Sinopsis:</label><input type="text" name="sinopsis"></p>
+		</div>
+
+		<div class="a1">
+		<p><label for="genero">Género:</label></p>
 			<select name="genero">
 				<option value="accion">
 					Accion
@@ -49,15 +58,28 @@
 					Fantasia
 				</option>
 			</select>
-		</p><label for="estreno">Estreno:</label><input type="date" id="esterno" name="estreno"
+		</div>
+
+		<div class="a1">
+		<p><label for="estreno">Estreno:</label></p>
+		<input type="date" id="esterno" name="estreno"
 	    	value="<?php echo date('Y-m-d'); ?>" 
 	    	  min="1895-03-22"/>
-		<p>
-		<p>
-			<label for="imagen">URL Imagen:</label><input type="text" id="imagen" name="imagen">(JPEG o PNG)
-		</p>
-		<input type="submit" value="Agregar Pelicula" />
-		</p>
+		</div>
+
+		<div class="a1">
+		<p><label for="imagen">URL Imagen:</label><input type="text" id="imagen" name="imagen">(JPEG o PNG)</p>
+		</div>
+
+		<div class="a1">
+			<div class="izq">
+				<p><a class="but" id="nav" href="inicio">VOLVER AL MENÚ</a></p>
+			</div>
+		<input class="but" type="submit" value="AGREGAR PELICULA" /></p>
+		</div>
+
+
+	
 	</form>
 </body>
 </html>

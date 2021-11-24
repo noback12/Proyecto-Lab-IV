@@ -9,7 +9,7 @@
 	if($_SESSION['logueado'] ){
 
 		//Validaciones 
-		if(!(isset($_POST['reservas2'])))die("Error reservas2");
+		if(!(isset($_POST['reservas2'])))throw new ValidacionException("No puedes acceder a este sitio si no reservas entradas");
 
 
 		$arrayReservas = $_POST['reservas2'];
@@ -27,7 +27,7 @@
 			$vFunc->render();
 		}
 	}else{
-			header("Location: InicioSesion.php");
+			header("Location: InicioSesion");
 
 	}
 

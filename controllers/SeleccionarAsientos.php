@@ -29,7 +29,7 @@
 
 		}
 	}else{
-			header("Location: InicioSesion.php");
+			header("Location: InicioSesion");
 
 	}
 

@@ -1,32 +1,34 @@
 <?php 
 
-// controllers / ListaPeliculasEnComplejo.php  
-//Muestro las Peliculas en un complejo , luego sus funciones
+	// controllers / ListaPeliculasEnComplejo.php  
+	//Muestro las Peliculas en un complejo , luego sus funciones
 
-require '../fw/fw.php';
-require '../models/Complejos.php';
-require '../views/ElegirComplejo.php';
-require '../views/ListaPeliculaComplejo.php';
-require '../views/ListaPeliculaFuncion.php';
+	require '../fw/fw.php';
+	require '../models/Complejos.php';
+	require '../views/ElegirComplejo.php';
+	require '../views/ListaPeliculaComplejo.php';
+	require '../views/ListaPeliculaFuncion.php';
 
-
-	//Si tengo el id pelicula Y el del complejo 
+	//Una vez que ya elegí el complejo
 	if(isset($_POST['id_pelicula'] ,$_POST['id_complejo'])){
 		$model = new Complejos();
 		$complejos = $model->getFunciones($_POST['id_pelicula'] ,$_POST['id_complejo'] );
 		$view= new ListaPeliculaFuncion();
-		$view->complejos = $complejos ; 
+
+		$view->complejos = $complejos ;
+
 	}
-	//Si tengo seteado SOLO  el id complejo muestro 
+	//Si no elegí el complejo muestro esto
 	else if(isset($_POST['id_complejo'])){
 		$model = new Complejos();
-		// identifico las salas de ese complejo
 		$complejos = $model->getPeliculas($_POST['id_complejo']);
 		$view= new ListaPeliculaComplejo();
 		$view->complejos = $complejos; 
-	//Sino elijo el complejo (otro controlador)
+	//Si ni siquiera pase por la página para elegir el complejo
 	}else{	
-		echo "Hacer validacion error entro sin elegir complejo";
+		header("Location: elegirComplejo");
 	}
 	$view->render();
- ?>
+
+	
+?>

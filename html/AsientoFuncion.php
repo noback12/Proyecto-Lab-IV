@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>Asiento Funcion</h1>
-	<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/ReservarAsientos.php" method="post">
+	<form action="ReservarAsientos" method="post">
 
 		<div id="asientos">
 			<div class="title-blk">
@@ -38,10 +38,12 @@
 			} ?>
 			<input name="id_funcion" type="hidden" value="<?= $asientos['0']['id_funcion'] ?>">
 			<input name="reservas" id="reservas" type="hidden" value="">
-
-
 		</div>
-		<input type="submit" value="Reservar" />
+		<div id="show"><label class="cbox_ocupado" >OCUPADO </label> <label class="cbox_disponible">DISPONIBLE</label></div>
+
+		<div class="der">
+			<input class="but" type="submit" value="RESERVAR" />
+		</div>
 	</form>
 	<script  src="../html/js/complejo.js" ></script>
 </body>

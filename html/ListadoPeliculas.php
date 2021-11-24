@@ -6,49 +6,55 @@
 	<meta charset="UTF-8">
 	<style>
  		 <?php include "style.css" ?>
+ 		
+ 		*{
+      	padding: 0px;
+      	margin: 0px;
+    	}
+
 	</style>
 	<title>Inicio</title>
 </head>
 <body>
-
-	<h1>Inicio</h1>
 	<div id="menu">
     	<nav >
 			<ul>
 				<li>
 					<?php  
 					if(isset($_SESSION['logueado']) ){
-						echo "<a href='CerrarSesion'>Cerrar SESIÓN</a>";
-					}else echo "<a href='InicioSesion'>INICIAR SESIÓN</a> 
+						echo "<a class='but' id='nav' href='CerrarSesion'>Cerrar Sesión</a>";
+					}else echo "<a class='but' id='nav' href='InicioSesion'>Iniciar Sesión</a> 
 					
 					<ul>
 						<li>
-							<a href='../controllers/AltaUsuario.php' target='_blank'>Crear usuario</a>
+							<a class='but' id='nav' href='InicioSesionEmpleado'>admin</a>
 						</li>
 
 					</ul> "?>
 				</li>
 				<li>
-					<a href="asd" target="_blank">item 2</a>
-					<ul>
-						<li>
-							<a href="asd" target="_blank">Item 2.1</a>
-						</li>
-						
-
-					</ul>
+					<a class="but" id="nav" href="elegirComplejo">Comprar entradas</a>
 				</li>
 				<?php  
 					if(isset($_SESSION['empleado']) ){ 
 						echo "
 								 <li>
-										<a href='' target=_'blank'> Menu empleado</a> 
+										<a class='but' id='nav'> Menu empleado</a> 
 									<ul>
 										<li> 
-											<a href='http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-lab-IV/controllers/AgregarPelicula.php' target='_blank'>agregar pelicula</a>
+											<a class='but' id='nav' href='AgregarPelicula'>agregar pelicula</a>
 										</li>
+
 										<li> 
-											<a href='asd' target='_blank'>agregar funcion</a>
+											<a class='but' id='nav' href='AgregarFuncion'>agregar funcion</a>
+										</li>
+										
+										<li> 
+											<a class='but' id='nav' href='EliminarPelicula'>eliminar pelicula</a>
+										</li>
+
+										<li> 
+											<a class='but' id='nav' href='EliminarFuncion'>eliminar funcion</a>
 										</li>
 									</ul>
 								</li>
@@ -58,9 +64,14 @@
 			</ul>
 		</nav>
   	</div>
-	
-	<br><br><br>
+  	
+  	<br/><br/><br/><br/>
 
+  	<div class="hti">
+  		<h1>Oeste Cinema</h1>
+  	</div>
+
+	<br/><br/>
 
 	<table>
 		<tr>
@@ -87,8 +98,10 @@
 				<td><img src="images/<?= $p['imagen'] ?>"></td>
 
 			</tr>
-		<?php } ?>
+
+		<?php }  ?>
 	</table>
 	
 </body>
 </html>
+

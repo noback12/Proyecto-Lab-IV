@@ -1,5 +1,5 @@
 
-<!-- html/ListadoPeliculas.php --> 
+<!-- html/ReservarAsientos.php --> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Reservar Asientos</h1>
-	<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/ReservarAsientosCompleto.php" method="post">
+	<form action="ReservarAsientosCompleto" method="post">
 		<table>
 			<tr>
 				<th>Letra</th>
@@ -54,7 +54,11 @@
 					<td colspan="2">TOTAL $<?= $precio ?>  </td>
 				</tr>
 		</table>
-		<input type="submit" value="CONFIRMAR" />
+
+		<br/><br/>
+		<div class="a1">
+			<input class="but" type="submit" value="CONFIRMAR" />
+		</div>
 	</form>
 
 	

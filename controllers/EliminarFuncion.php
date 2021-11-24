@@ -7,8 +7,8 @@
     require '../models/Funciones.php';
     require '../views/EliminarFuncion.php';
     require '../views/EliminarFuncionOk.php';
-    /*session_start();
-    if(isset($_SESSION['empleado']) ){*/
+    session_start();
+    if(isset($_SESSION['empleado']) ){
         
         $mFuncion = new Funciones();
        if(isset($_POST['funcion'])){
@@ -21,9 +21,9 @@
             $vFunc->Funciones = $mFuncion->getAEliminar();
         }
         $vFunc->render();
-    /*}else{
+    }else{
         header("Location: InicioSesionEmpleado.php");
-    }*/
+    }
 
 
 ?>

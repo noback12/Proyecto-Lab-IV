@@ -4,8 +4,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link href="Style.css" rel="stylesheet" type="text/css" />
-
+	<style type="text/css">
+		<?php include "style.css" ?>
 	</style>
 	<title>Listado de Funciones</title>
 </head>
@@ -37,9 +37,7 @@
 		<?php } ?>
 	</table>
 
-
-
-
+	<a href="inicio">Volver</a>
 	
 </body>
 </html>

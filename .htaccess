@@ -1,9 +1,4 @@
-# si no es comentario es directiva , no se mezclan 
-
 RewriteEngine on 
-
-#alt + 94 circunflejo 
-#lado izq es lo que se busca(expresion regular) ,lado der lo que se reemplaza 
 
 RewriteRule ^inicio$ controllers/ListadoPeliculas.php
 RewriteRule ^InicioSesion$ controllers/InicioSesion.php
@@ -21,6 +16,3 @@ RewriteRule ^ReservarAsientosCompleto$ controllers/ReservarAsientosCompleto.php
 RewriteRule ^SeleccionarAsientos$ controllers/SeleccionarAsientos.php
 RewriteRule ^EliminarPelicula$ controllers/EliminarPelicula.php
 RewriteRule ^EliminarFuncion$ controllers/EliminarFuncion.php
-
-#cuantificador ,el numero que hizo match de la izq 
-#RewriteRule ^Detalle-pelicula-([0-9]+)$ controllers/detallepelicula.php?id=$1

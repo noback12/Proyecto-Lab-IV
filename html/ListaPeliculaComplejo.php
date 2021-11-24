@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<style>
  		 <?php include "style.css" ?>
+ 		 <?php include "StyleCompra.css" ?>
 		</style>
 		<script  src="../html/js/jquery-3.6.0.js"  ></script>
 		</style>
@@ -21,8 +22,7 @@
 						 foreach ($this->complejos as $c ) {  ?>
 						 	<td>
 							 	<div>
-									<img src="../images/<?= $c['imagen'] ?>">
-										
+									<img src="images/<?= $c['imagen'] ?>">	
 									<p>
 										<?= $c['id_pelicula'] ?>
 									</p>
@@ -38,8 +38,12 @@
 						<?php } ?>
 					</table>
 				</div>
-				
-				<select name="id_pelicula" id="id_pelicula">
+
+				<br/><br/><br/>
+
+				<div class="sel" id="selPel">
+				<label for="id_pelicula">Seleccione una película:</label>
+				<select class="selPer" name="id_pelicula" id="selPer">
 					<option>-</option>
 				<?php foreach ($this->complejos as $p) {  ?>
 					<option value="<?= $p['id_pelicula'] ?>">
@@ -47,9 +51,22 @@
 					</option>
 
 				<?php } ?>
+				</select>
+				</div>
 					<input id="id_complejo" name="id_complejo" type="hidden" value="<?= $p['id_complejo'] ?>">
 
-				<p><input type="submit" value="Elegir Pelicula" /></p>
+				<br/><br/>
+			
+				<div class="izq">
+					<p><a class="but"href="inicio">VOLVER AL MENÚ</a></p>
+				</div>
+
+				<div class="der">	
+					<p><input class="but" type="submit" value="CONTINUAR" /></p>
+				</div>
+				
+
+				
 			</form>
 	</body>
 	<script  src="../html/js/complejo.js" ></script>

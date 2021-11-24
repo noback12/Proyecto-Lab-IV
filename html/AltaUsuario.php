@@ -8,26 +8,6 @@
 	<title>Alta Usuario</title>
 	<style type="text/css">
 			<?php include "Style.css" ?>
-
-			div.a1{
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-family: Verdana;
-				font-size: 20px;
-			}
-
-			#but{
-	 			background-color: #2e518b;
-	 			padding: 10px;
-				color:white;
-				font-size: 18px;
- 			}
-
- 			#but:hover{
- 				background-color: #74AEE4;
- 			}
-
 	</style>
 </head>
 <body>
@@ -44,15 +24,18 @@
 		</div>
 
 		<div class="a1">
-		<p><label for="email">Email:</label><input type="text" name="email"></p> 
+		<p><label for="email">Email:</label><input type="email" name="email"></p> 
 		</div>
 
 		<div class="a1">
 		<p><label for="contraseña">Contraseña:</label><input type="password" name="contraseña"></p> 
 		</div>
 
-		<div class="a1">
-		<input id="but" type="submit" value="Crear usuario" /></p>
+		<div class="izq">
+		<a class="but" id="but2" href="inicio">VOLVER AL MENÚ</a>
+		</div>
+		<div class="der">	
+		<input class="but" type="submit" value="CREAR USUARIO" /></p>
 		</div>
 	</form>
 </body>

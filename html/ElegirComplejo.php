@@ -11,7 +11,7 @@
 	</style>
 </head>
 <body>
-	<h1>Elegir Complejo</h1>
+	<h1>Complejos Disponibles</h1>
 	
 	<table>
 			<tr>
@@ -31,16 +31,33 @@
 			<?php } ?>
 		</table>
 	
-	<form action="http://localhost:8080/lab%20IV/Proyecto-Lab-IV/Proyecto-Lab-IV/controllers/listaPeliculasEnComplejo.php" method="post">
-		<label for="id_complejo">Complejo:</label>
-		<select name="id_complejo">
-			<?php foreach ($this->complejos as $c ) {  ?>
-				<option value="<?= $c['id_complejo'] ?>">
-					<?= $c['nombre'] ?>
-				</option>
-			<?php } ?>
-		</select>					
-		<p><input type="submit" value="Elegir Complejo" /></p>
+
+		<br/><br/><br/>
+
+	<form action="listaPeliculasEnComplejo" method="post">
+		<div class="sel" id="selCom">
+			<label for="id_complejo">Complejo:</label>
+			<select class="selPer" name="id_complejo">
+				<?php foreach ($this->complejos as $c ) {  ?>
+					<option value="<?= $c['id_complejo'] ?>">
+						<?= $c['nombre'] ?>
+					</option>
+				<?php } ?>
+			</select>
+		</div>
+
+		<br/><br/><br/><br/>
+
+		<div class="izq">
+			<p><a class="but" href="inicio">VOLVER AL MENÚ</a></p>
+		</div>
+
+		<div class="der">
+			<p><input class="but" type="submit" value="ELEGIR COMPLEJO" /></p>
+		</div>
+
+		
+	
 	</form>
 </body>
 </html>

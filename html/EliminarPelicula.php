@@ -12,9 +12,9 @@
 <body>
 	
 	<form action="" method="post" >
-		<div> 
-			Elija la pelicula a eliminar
-		</div>  
+		<h1>Elija la pelicula a eliminar</h1> 
+
+		<div class="a1">
 		<p><label for="pelicula">Pelicula:</label>
 				<select name="pelicula">
 
@@ -28,10 +28,12 @@
 				<?php } ?>
 					
 				</select></p>
+		</div>
 
 
-
-		<input type="submit" value="Elegir pelicula " />
+		<div class="a1">
+			<p><input class="but" type="submit" value="ELEGIR PELICULA" /></p>
+		</div>
 		
 	</form>
 	

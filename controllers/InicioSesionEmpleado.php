@@ -20,14 +20,13 @@ if(isset($_POST['email'])){
 		$_SESSION['logueado'] = true;
 		$_SESSION['email'] = $email ;
 		$_SESSION['empleado'] = true;
-		header("Location: ListadoPeliculas.php");
+		header("Location: inicio");
 		$vEmp = new InicioSesionEOk();
 		$vEmp->Empleados = $Empleados;
 	}else{
 		echo "<script>alert('Usuario o contraseña incorrecto')</script>";
 		$vEmp = new InicioSesionEmpleado();
 	}
-
 
 }
 

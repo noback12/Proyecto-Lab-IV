@@ -9,6 +9,20 @@
 		}
 
 		public function getFuncionesSala($idSala){
+			// VALIDACIONES
+			//Si el id de la sala no es númerico
+			if(!ctype_digit($idSala)) throw new ValidacionException("El id de la sala no es númerico");
+			//Si el id es menor a uno
+			if($idSala < 1) throw new ValidacionException("El id de la sala es inferior a 1");
+			//Si ponen un id inexistente
+			$this->db->query("SELECT * FROM salas
+							 WHERE id_sala = $idSala");
+
+			if($this->db->numRows() !=1) throw new ValidacionException("No existe la sala elegida");
+
+			////////////////////////////////////////////////////////////////////////////////////
+
+
 			$this->db->query("SELECT * 
 							FROM funcion
 							WHERE id_sala = $idSala");
@@ -65,16 +79,87 @@
 
 		}
 
-		public function AgregarFuncion2($dia,$hora,$sala,$peli){
+		public function AgregarFuncion2($day,$hora,$sala,$peli){
+			// VALIDACIONES
+			$fecha = $day ; //Guardo la fecha entera  
+			$anio = substr($fecha , 0,4); // Separo el año 
+			$mes = substr($fecha , 5,2) ; // mes 
+			$dia = substr($fecha ,8,2) ; // Dia 
+		
+			if (!checkdate($mes,$dia,$anio) or $anio < date('Y') or $anio > date('Y')+1 ){
+				throw new ValidacionException("error fecha invalida");
+			}
+
+			$horas = substr($hora , 0 ,2 ); 
+			$minutos= substr($hora,3,5);
+
+			//si no existe
+			if(!ctype_digit($sala)) throw new ValidacionException("El id de la sala no es númerico");
+			//si es menor a uno
+			if($sala < 1) throw new ValidacionException("El id de la sala es inferior a 1");
+			//se obtienen mas de 1 resultado  ($pId echo ? )
+			$this->db->query("SELECT * FROM salas
+							 WHERE id_sala = $sala ");
+
+			if($this->db->numRows() !=1) throw new ValidacionException("No existe la sala elegida");
+
+			//si no existe
+			if(!ctype_digit($peli)) throw new ValidacionException("El id de la pelicula es inferior a 1");
+			//si es menor a uno
+			if($peli < 1) throw new ValidacionException("No existe la pelicula elegida");
+			//se obtienen mas de 1 resultado  ($pId echo ? )
+			$this->db->query("SELECT * FROM peliculas
+							 WHERE id_pelicula = $peli ");
+
+			if($this->db->numRows() !=1) throw new ValidacionException("El id de la pelicula no es númerico");
+
+
+			////////////////////////////////////////////////////////////////////////////////////
+
 
 			//Nueva funcion 
 		     $this->db->query("INSERT INTO funcion (dia,hora,id_sala,id_pelicula) 
-					values ('$dia','$hora','$sala','$peli')	");
+					values ('$day','$hora','$sala','$peli')	");
 
 		}
 
 
-		public function AsignarAsientos($dia,$hora,$sala,$peli){
+		public function AsignarAsientos($day,$hora,$sala,$peli){
+
+			// VALIDACIONES
+			$fecha = $day ; //Guardo la fecha entera  
+			$anio = substr($fecha , 0,4); // Separo el año 
+			$mes = substr($fecha , 5,2) ; // mes 
+			$dia = substr($fecha ,8,2) ; // Dia 
+		
+			if (!checkdate($mes,$dia,$anio) or $anio < date('Y') or $anio > date('Y')+1 ){
+				throw new ValidacionException("error fecha invalida");
+			}
+
+			$horas = substr($hora , 0 ,2 ); 
+			$minutos= substr($hora,3,5);
+
+			//si no existe
+			if(!ctype_digit($sala)) throw new ValidacionException("El id de la sala no es númerico");
+			//si es menor a uno
+			if($sala < 1) throw new ValidacionException("El id de la sala es inferior a 1");
+			//se obtienen mas de 1 resultado  ($pId echo ? )
+			$this->db->query("SELECT * FROM salas
+							 WHERE id_sala = $sala ");
+
+			if($this->db->numRows() !=1) throw new ValidacionException("No existe la sala elegida");
+
+			//si no existe
+			if(!ctype_digit($peli)) throw new ValidacionException("El id de la pelicula es inferior a 1");
+			//si es menor a uno
+			if($peli < 1) throw new ValidacionException("No existe la pelicula elegida");
+			//se obtienen mas de 1 resultado  ($pId echo ? )
+			$this->db->query("SELECT * FROM peliculas
+							 WHERE id_pelicula = $peli ");
+
+			if($this->db->numRows() !=1) throw new ValidacionException("El id de la pelicula no es númerico");
+
+			////////////////////////////////////////////////////////////////////////////////////
 
 			$this->db->query("SELECT id_funcion FROM funcion order by id_funcion DESC limit 1");
 			$func = $this->db->fetchAll();
@@ -99,7 +184,36 @@
 					values ('$value','$idFunc','0')	");
 			}
 
-		    
+		}
+
+		public function getAEliminar() {
+			$this->db->query("SELECT dia,hora,id_funcion,p.nombre as nombre , s.numero as numero ,c.nombre as complejo
+							FROM funcion  as f
+							LEFT JOIN peliculas as p on p.id_pelicula =f.id_pelicula
+							LEFT JOIN salas as s on s.id_sala = f.id_sala
+							LEFT JOIN complejos as c on c.id_complejo = s.id_complejo
+							");
+			return $this->db->fetchAll();
+		}
+
+
+		public function eliminarFunc($fId){
+
+		//si no existe
+		if(!ctype_digit($fId)) throw new ValidacionException("Error efunc 1") ;
+		//si es menor a uno
+		if($fId < 1) throw new ValidacionException("Error efunc 2");
+		//se obtienen mas de 1 resultado  ($pId echo ? )
+		$this->db->query("SELECT * FROM funcion
+						 WHERE id_funcion = $fId ");
+
+		if($this->db->numRows() !=1) throw new ValidacionException("Error efunc 3");
+		
+		// borro la funcion
+		$this->db->query("DELETE FROM funcion WHERE id_funcion = $fId");
+
+		//Borro los asientos asociados 
+		$this->db->query("DELETE FROM asiento_funcion WHERE id_funcion IN ($fId)");
 
 		}
 

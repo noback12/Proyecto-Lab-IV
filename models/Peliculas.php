@@ -11,9 +11,19 @@ class Peliculas extends Model {
 	}
 
 	public function getPelicula($id_peli){
+		// VALIDACIONES
+
 		//si no existe
 		if(!ctype_digit($id_peli)) throw new ValidacionException("Error id_peli 1") ;
+		//si es menor a uno
+		if($id_peli < 1) throw new ValidacionException("El id de la pelicula es menor a 1");
+		//se obtienen mas de 1 resultado  ($pId echo ? )
+		$this->db->query("SELECT * FROM peliculas
+						 WHERE id_pelicula = $id_peli ");
 
+		if($this->db->numRows() !=1) throw new ValidacionException("No existe la pelicula elegida");
+
+		////////////////////////////////////////////////////////////////////////////////////
 
 
 		$this->db->query("SELECT * 
@@ -23,34 +33,13 @@ class Peliculas extends Model {
 		return $this->db->fetch();
 	}
 
-
-
-	public function existePelicula($pId){
-		//si no existe
-		if(!ctype_digit($pId)) throw new ValidacionException("Error") ;
-		//si es menor a uno
-		if($pId < 1) throw new ValidacionException("Error");
-		//se obtienen mas de 1 resultado  ($pId echo ? )
-		$this->db->query("SELECT * FROM peliculas
-						 WHERE id_pelicula = $pId ");
-
-		if($this->db->numRows() !=1) throw new ValidacionException("Error");
-
-		return true ; 
-	}
-
-
 	public function AgregarPeli($nombre,$duracion,$sinopsis,$genero,$estreno,$imagen){
-
-		//$peliAux = new Peliculas();
-		
-		//if(!$peliAux->existePelicula($id_pelicula))throw new ValidacionException("error peliculaexiste 1");
+		// VALIDACIONES
 
 		//Validacion nombre
-		if(!isset($_POST["nombre"])) throw new ValidacionException("error nombre 1");
-		if(strlen($_POST["nombre"]) <2  )throw new ValidacionException("error nombre menor a 2 caracteres");//die("error nombre menor 1")
+		if(!isset($_POST['nombre'])) throw new ValidacionException("error nombre 1");
+		if(strlen($_POST['nombre']) <2  )throw new ValidacionException("error nombre menor a 2 caracteres");
 
-		// escapeWildcards???
 		//dato sanitizado
 		$_POST['nombre'] = substr($_POST['nombre'], 0, 50);
 
@@ -62,15 +51,15 @@ class Peliculas extends Model {
 		if($horas < 0 or $minutos < 0) throw new ValidacionException("error duracion negativa");
 
 		//validacion sinopsis 
-		if(!isset($_POST["sinopsis"])) throw new ValidacionException("error sinopsis 1");
-		if(strlen($_POST["sinopsis"]) <1  )throw new ValidacionException("error sinopsis menor 1");
+		if(!isset($_POST['sinopsis'])) throw new ValidacionException("error sinopsis 1");
+		if(strlen($_POST['sinopsis']) <1  )throw new ValidacionException("error sinopsis menor 1");
 		// escapeWildcards???
 		//dato sanitizado
 		$_POST['nombre'] = substr($_POST['nombre'], 0, 300);
 
 		//Validando estreno 
 		//var_dump($_POST["fecha"]); Para ver el formato que recibo la fecha 
-		$fecha = $_POST["estreno"] ; //Guardo la fecha entera  
+		$fecha = $_POST['estreno'] ; //Guardo la fecha entera  
 		$anio = substr($fecha , 0,4); // Separo el año 
 		$mes = substr($fecha , 5,2) ; // mes 
 		$dia = substr($fecha ,8,2) ; // Dia 
@@ -87,6 +76,9 @@ class Peliculas extends Model {
     	file_put_contents($destdir.substr($link, strrpos($link,'/')), $img);
 
     	$lugar = $destdir.substr($link, strrpos($link,'/'));
+
+    	////////////////////////////////////////////////////////////////////////////////////
+
 		
 		$this->db->query("INSERT INTO peliculas (nombre ,duracion,sinopsis,genero,estreno,imagen) 
 			values ('$nombre','$duracion','$sinopsis','$genero','$estreno','$lugar')	");

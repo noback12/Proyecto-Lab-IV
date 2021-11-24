@@ -10,7 +10,6 @@ require '../views/InicioSesion.php';
 $mUser = new Usuarios();
 
 if(isset($_POST['email'])){
-	//chequear validaciones email
 
 	$email = $_POST['email'];
 	$passwd = sha1($_POST['contraseña']);
