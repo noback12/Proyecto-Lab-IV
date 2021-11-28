@@ -11,9 +11,8 @@
 		//Validaciones 
 		if(!(isset($_POST['reservas2'])))throw new ValidacionException("No puedes acceder a este sitio si no reservas entradas");
 
-
 		$arrayReservas = $_POST['reservas2'];
-		//Valido de vuelta ?? quisiyo...
+
 
 		if(isset($_POST['reservas2'])){
 			$arrayReservas = $_POST['reservas2'];

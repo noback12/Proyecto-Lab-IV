@@ -34,6 +34,18 @@
 			//Para seleccionar varios ids tendria que hacer WHERE id_af IN(id1,id2,....); pero nose la cantidad de ids que tendre asi que uso implode("," ,) 
 			//Implode(",",$Elarray)me separa los valores del array en un string y los separa con la ",". 
 
+			foreach ($arrayR as $lugar => $IDa) {
+
+				if(!ctype_digit($IDa)) throw new ValidacionException("El id del asiento no es númerico");
+				if($IDa < 1) throw new ValidacionException("El id del asiento es inferior a 1");
+				//Si ponen un id inexistente
+				$this->db->query("SELECT * FROM asiento_funcion
+								 WHERE id_af = $IDa");
+
+				if($this->db->numRows() !=1) throw new ValidacionException("No existe el asiento elegido");
+			}
+
+
 			$this->db->query("SELECT AF.id_af ,A.letra,A.numero,S.numero as sala,C.nombre,C.precio,P.nombre as peli,F.hora ,F.dia
 							FROM asiento_funcion as AF
 							LEFT JOIN asientos as A on Af.id_asiento = A.id_asiento
@@ -48,6 +60,19 @@
 
 
 		public function reservar2(array $arrayR){
+
+			foreach ($arrayR as $lugar => $IDa) {
+
+				if(!ctype_digit($IDa)) throw new ValidacionException("El id del asiento no es númerico");
+				if($IDa < 1) throw new ValidacionException("El id del asiento es inferior a 1");
+				//Si ponen un id inexistente
+				$this->db->query("SELECT * FROM asiento_funcion
+								 WHERE id_af = $IDa");
+
+				if($this->db->numRows() !=1) throw new ValidacionException("No existe el asiento elegido");
+			}
+
+			
 
 			// Hago un uptade para que actualize los asientos que fueron seleccionados y queden ocupados 
 			$this->db->query("UPDATE asiento_funcion 
