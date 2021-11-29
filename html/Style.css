@@ -56,17 +56,17 @@ img{
     background-position: center top;
 }
 
-.cbox_ocupado ,.cbox_ocupado:checked + label ,.cbox_disponible , .cbox_disponible:checked + label {
-  margin: 3px;
-  width: 21px;
-  height: 21px;
+.cbox_ocupado ,.cbox_ocupado:checked + label ,.cbox_disponible , .cbox_disponible:checked + label , .cbox_SE{
+  margin: 57px 7px;
+  width: 51px;
+  height: 51px;
   border-bottom-left-radius: 26%;
   border-bottom-right-radius: 26%;
   color: #000000;
   text-align: center;
   font-size: 150%;
   background-color: #f2f2f2;
-  Padding: 0,10px;
+  Padding: 0 10px;
 }
 
 .cbox_ocupado ,.cbox_ocupado:checked + label  {
@@ -77,10 +77,10 @@ img{
 .cbox_disponible {
   background-color: lightblue;
 }
-
-.cbox_disponible:checked + label {
-  background-color: green;
+.cbox_SE {
+  background-color: #9bff82;
 }
+
 
 
 .cbox_disponible:hover{
@@ -96,8 +96,8 @@ img{
 
 
 input[type=checkbox] {
-  /*-webkit-appearance: none;*/
-  /*display:none;*/
+  -webkit-appearance: none;
+  display:none;
 }
 
 
