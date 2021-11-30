@@ -8,7 +8,7 @@
  		 <?php include "style.css" ?>
  		 <?php include "StyleCompra.css" ?>
 		</style>
-		<script  src="../html/js/jquery-3.6.0.js"  ></script>
+		<script  src="html/js/jquery-3.6.0.js"  ></script>
 		</style>
 		<?php $lugar =$this->complejos  ?>
 		<title>Listado de Peliculas en <?= $lugar[0]['ncomp'] ?>  X</title>
@@ -66,7 +66,7 @@
 				
 			</form>
 	</body>
-	<script  src="../html/js/complejo.js" ></script>
+	<script  src="html/js/complejo.js" ></script>
 </html>
 
 

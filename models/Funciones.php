@@ -38,12 +38,17 @@
 
 				if(!ctype_digit($IDa)) throw new ValidacionException("El id del asiento no es númerico");
 				if($IDa < 1) throw new ValidacionException("El id del asiento es inferior a 1");
-				//Si ponen un id inexistente
-				$this->db->query("SELECT * FROM asiento_funcion
-								 WHERE id_af = $IDa");
-
-				if($this->db->numRows() !=1) throw new ValidacionException("No existe el asiento elegido");
-			}
+				}
+			//Hago una sola consulta de validacion 
+			//Cuento cuantos numeros del array son validos
+			$this->db->query("SELECT count(*) 
+								FROM asiento_funcion 
+								WHERE id_af IN (" . implode(',', $arrayR) . ")   "
+							);
+			//Guardo el resultado
+			$auxArray = $this->db->fetch();
+			//Si son menos que todos los del array ,es porque alguno no era valido 
+			if($auxArray["count(*)"] != count($arrayR)) throw new ValidacionException("No existe alguno de los asientos elegidos");
 
 
 			$this->db->query("SELECT AF.id_af ,A.letra,A.numero,S.numero as sala,C.nombre,C.precio,P.nombre as peli,F.hora ,F.dia
@@ -65,12 +70,17 @@
 
 				if(!ctype_digit($IDa)) throw new ValidacionException("El id del asiento no es númerico");
 				if($IDa < 1) throw new ValidacionException("El id del asiento es inferior a 1");
-				//Si ponen un id inexistente
-				$this->db->query("SELECT * FROM asiento_funcion
-								 WHERE id_af = $IDa");
-
-				if($this->db->numRows() !=1) throw new ValidacionException("No existe el asiento elegido");
-			}
+				}
+			//Hago una sola consulta de validacion 
+			//Cuento cuantos numeros del array son validos
+			$this->db->query("SELECT count(*) 
+								FROM asiento_funcion 
+								WHERE id_af IN (" . implode(',', $arrayR) . ")   "
+							);
+			//Guardo el resultado
+			$auxArray = $this->db->fetch();
+			//Si son menos que todos los del array ,es porque alguno no era valido 
+			if($auxArray["count(*)"] != count($arrayR)) throw new ValidacionException("No existe alguno de los asientos elegidos");
 
 			
 

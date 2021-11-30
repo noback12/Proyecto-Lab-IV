@@ -6,10 +6,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<style>
- 		 <?php include "style.css" ?>
-	</style>
-		<script  src="js/jquery-3.6.0.js"  ></script>
+ 		 	<?php include "style.css" ?>
 		</style>
+		<script  src="html/js/jquery-3.6.0.js"  ></script>
 		<title>ListaPeliculaFuncion  X</title>
 	</head>
 	<body>
@@ -63,5 +62,5 @@
 			</form>
 	</body>
 
-	<script  src="js/complejo.js" ></script>
+	<script  src="html/js/complejo.js" ></script>
 </html>
